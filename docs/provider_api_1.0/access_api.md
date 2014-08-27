@@ -176,39 +176,42 @@ Eftersom det är fördelaktigt att kunna hålla Com Hem PI uppdaterat och "i syn
 ## Dataformat - Exempel
 
 
-```xml
 Request:
-    GET /ko/api/1/ HTTP/1.1
+```http
+GET /ko/api/1/ HTTP/1.1
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-    Content-Type: application/xml
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <Entries>
-    <Count>1</Count>
-    <Entry>
-        <AccessId>STTA0001</AccessId>
-        <Access>
-            <StreetName>Testvägen</StreetName>
-            <StreetNumber>100</StreetNumber>
-            <StreetLittera></StreetLittera>
-            <PostalCode>10000</PostalCode>
-            <City>Ankeborg</City>
-            <CountryCode>SE</CountryCode>
-            <PremisesType>MDU_APARTMENT</PremisesType>
-            <MduApartmentNumber>1001</MduApartmentNumber>
-            <MduDistinguisher>12121212</MduDistinguisher>
-            <Activatable>NO</Activatable>
-            <Sellable>2012-03-01</Sellable>
-            <FiberConverter>LASER_3001X_MK2</FiberConverter>
-            <CpeSwitch></CpeSwitch>
-            <CpeRouter>NETGEAR WNDR4000</CpeRouter>
-            <Option82>192.168.248.85 ge-0/0/10</Option82>
-            <Population>Hemsöhem</Population>
-        </Access>
-    </Entry>
-    </Entries>
+```http
+HTTP/1.1 200 OK
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Entries>
+<Count>1</Count>
+<Entry>
+    <AccessId>STTA0001</AccessId>
+    <Access>
+        <StreetName>Testvägen</StreetName>
+        <StreetNumber>100</StreetNumber>
+        <StreetLittera></StreetLittera>
+        <PostalCode>10000</PostalCode>
+        <City>Ankeborg</City>
+        <CountryCode>SE</CountryCode>
+        <PremisesType>MDU_APARTMENT</PremisesType>
+        <MduApartmentNumber>1001</MduApartmentNumber>
+        <MduDistinguisher>12121212</MduDistinguisher>
+        <Activatable>NO</Activatable>
+        <Sellable>2012-03-01</Sellable>
+        <FiberConverter>LASER_3001X_MK2</FiberConverter>
+        <CpeSwitch></CpeSwitch>
+        <CpeRouter>NETGEAR WNDR4000</CpeRouter>
+        <Option82>192.168.248.85 ge-0/0/10</Option82>
+        <Population>Hemsöhem</Population>
+    </Access>
+</Entry>
+</Entries>
 ```
 
 ## Autentisering
@@ -228,42 +231,44 @@ If-Modified-Since = "If-Modified-Since" ":" HTTP-date
 
 Vid första anropet sker ingen begränsning. Då ber Com Hem PI om fullständiga beståndet.
 
-```
 Request:
-    GET /ko/api/1/ HTTP/1.1
+```http
+GET /ko/api/1/ HTTP/1.1
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-    Content-Type: application/xml
+```http
+HTTP/1.1 200 OK
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Content-Type: application/xml
 ...
 ```
 
 Vid påföljande anrop skickar Com Hem PI med "If-Modified-Since"-header för att bara be om uppdaterade poster.
 
-```
 Request:
-    GET /ko/api/1/ HTTP/1.1
-    If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
+```http
+GET /ko/api/1/ HTTP/1.1
+If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
 ...
 ```
 
 Om det finns uppdaterade poster kan svaret se ut såhär:
 
-```
 Response:
-    HTTP/1.1 200 OK
-    Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
-    Content-Type: application/xml
+```http
+HTTP/1.1 200 OK
+Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
+Content-Type: application/xml
 ```
 
 Om det inte finns uppdaterade poster ser svaret istället ut såhär:
 
-```
 Response:
-    HTTP/1.1 304 Not Modified
-    Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
-    Content-Type: application/xml
+```
+HTTP/1.1 304 Not Modified
+Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
+Content-Type: application/xml
 ```
 
 ## <a id="availability"></a> Säljbarhet och Levererbarhet

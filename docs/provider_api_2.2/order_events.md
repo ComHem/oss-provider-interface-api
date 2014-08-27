@@ -10,13 +10,16 @@ Fälten beskrivs i <a href="service_activation.md">Service Activation API</a>.
 
 ## Exempel: Hämtning av nya events
 
-```json
 Request:
-    GET /api/2.2/orderevents/?since=cc537e54-e59c-11e3-a593-3c970e806452
+```http
+GET /api/2.2/orderevents/?since=cc537e54-e59c-11e3-a593-3c970e806452
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 [
     {
         "event": "2a6d6432-e59d-11e3-9a52-3c970e806452",
@@ -59,13 +62,16 @@ Enbart order-event av typen order.event `DONE_SUCCESS` eller `DONE_FAILED` får 
 
 ## Exempel: Hämtning av alla events
 
-```json
 Request:
-    GET /api/2.2/orderevents/
+```http
+GET /api/2.2/orderevents/
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 [
     {
         "event": "251825a8-e59d-11e3-bf71-3c970e806452",

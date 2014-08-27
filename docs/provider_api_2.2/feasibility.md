@@ -234,7 +234,7 @@ Av den anledningen är "Last-Modified" obligatoriskt vid HTTP Status 200.
 
 Se [RFC-2616][rfc2616-sec14]. Exemplen använder ingen autentisering.
 
-```
+```http
 If-Modified-Since = "If-Modified-Since" ":" HTTP-date
 ```
 
@@ -242,41 +242,43 @@ If-Modified-Since = "If-Modified-Since" ":" HTTP-date
 
 Exempel på anropssekvens:
 
-```
 Request:
-    GET /api/2.2/accesses/ HTTP/1.1
+```http
+GET /api/2.2/accesses/ HTTP/1.1
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Content-Type: application/json
 ...
 ```
 
 Vid påföljande anrop skickar Com Hem PI med "If-Modified-Since"-header för att bara be om uppdaterade poster.
 
-```
 Request:
-    GET /api/2.2/accesses/ HTTP/1.1
-    If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
+```http
+GET /api/2.2/accesses/ HTTP/1.1
+If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
 ...
 ```
 
 Om det finns uppdaterade poster kan svaret se ut såhär:
 
-```
 Response:
-    HTTP/1.1 200 OK
-    Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
+Content-Type: application/json
 ...
 ```
 
 Om det inte finns uppdaterade poster ser svaret istället ut såhär:
 
-```
 Response:
-    HTTP/1.1 304 Not Modified
+```http
+HTTP/1.1 304 Not Modified
 ```
 
 [rfc2616-sec14]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html "HTTP/1.1 RFC-2616 Section 14, Header Field Definitions"

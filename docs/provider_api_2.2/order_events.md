@@ -11,7 +11,7 @@ Fälten beskrivs i <a href="service_activation.md">Service Activation API</a>.
 ## Exempel: Hämtning av nya events
 
 Request:
-```http
+```
 GET /api/2.2/orderevents/?since=cc537e54-e59c-11e3-a593-3c970e806452
 ```
 

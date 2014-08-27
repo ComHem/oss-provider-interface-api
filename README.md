@@ -4,3 +4,6 @@
 * [API 2.1](docs/provider_api_2.1/index.md) (deprecated)
 * [API 1.0](docs/provider_api_1.0/index.md) (deprecated)
 * [CSV Feasibility](docs/csv_access_upload_api_1.0/index.md)
+
+
+The API is free software/open source, and is distributed under the [MIT License](http://opensource.org/licenses/MIT)

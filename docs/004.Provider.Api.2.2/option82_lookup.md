@@ -1,6 +1,3 @@
----
-out:provider_interface_2.2_option82_to_accessid.html
----
 # Option82 Lookup API
 
 För att stöda utrustningsbaserad autoaktivering behöver Com Hem kunna slå upp vilken Access ett Option82-värde avser.

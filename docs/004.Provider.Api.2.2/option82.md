@@ -1,6 +1,3 @@
----
-out:provider_interface_2.2_option82.html
----
 # Option82-format
 
 Option82-formatet är enligt [RFC-3046][rfc3046-sec2].

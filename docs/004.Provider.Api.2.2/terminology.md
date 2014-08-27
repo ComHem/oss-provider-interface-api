@@ -1,6 +1,3 @@
----
-out:provider_interface_2.2_terminology.html
----
 # Terminologi
 
 ## Access

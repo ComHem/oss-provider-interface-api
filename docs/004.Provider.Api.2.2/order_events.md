@@ -1,6 +1,3 @@
----
-out:provider_interface_2.2_order_events.html
----
 # Order Events API
 
 Vid orderläggning i API 2.1 kan kommunikationsoperatören svara med state `RECEIVED`. Det betyder att tjänsteleverantören skall fråga regelbundet om ordern status. Com Hem har hittils valt att fråga en gång per order var 30:e minut.

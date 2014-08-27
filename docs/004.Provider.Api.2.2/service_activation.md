@@ -1,6 +1,3 @@
----
-out:provider_interface_2.2_service_activation.html
----
 # Service Activation API
 
 ## Orderläggning, Exempel: Aktivering

@@ -1,6 +1,3 @@
----
-out:provider_interface_2.2_availability.html
----
 # Availability API
 
 Availability ger samma information som Feasibility-API, men enbart för en access.

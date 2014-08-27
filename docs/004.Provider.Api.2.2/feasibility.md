@@ -1,6 +1,3 @@
----
-out:provider_interface_2.2_feasibility.html
----
 # Feasibility API
 
 Com Hem använder Feasibility API för att kunna hitta avlämningspunkter och svara på om en fastighet/lägenhet är inkopplad i ett nät. Com Hem ser även vilken teknisk kapacitet varje access har genom de tjänster som är definierade på accessen.

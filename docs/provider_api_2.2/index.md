@@ -23,8 +23,7 @@ kund för att identifiera specifik _access_ att aktivera.
 
 ### Availability
 
-Com Hem definierar _Availability_ som aktuell status vilka tjänster som är aktiva och vilka som går att leverera på en specifik avlämningsp
-unkt. _Availability_-frågor används ofta interaktivt, exempelvis under konversation med potentiell slutkund.
+Com Hem definierar _Availability_ som aktuell status vilka tjänster som är aktiva och vilka som går att leverera på en specifik avlämningspunkt. _Availability_-frågor används ofta interaktivt, exempelvis under konversation med potentiell slutkund.
 
 ## Innehåll
 

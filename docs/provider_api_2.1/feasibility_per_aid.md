@@ -6,13 +6,16 @@ Fältbeskrivningarna är identiska med Bulk-APIt.
 
 ### Exempel
 
-```json
 Request:
-    GET /api/2.1/accesses/STTA0001 HTTP/1.1
+```http
+GET /api/2.1/accesses/STTA0001 HTTP/1.1
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "accessId": "STTA0001", 
     "streetName": "Testvägen", 

@@ -64,7 +64,7 @@ Enbart order-event av typen order.event `DONE_SUCCESS` eller `DONE_FAILED` får 
 
 Request:
 ```http
-GET /api/2.2/orderevents/
+GET /api/2.2/orderevents/ HTTP/1.1
 ```
 
 Response:

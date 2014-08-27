@@ -6,6 +6,7 @@ Request:
 ```http
 POST /api/2.2/orders/ HTTP/1.1
 Content-Type: application/json
+
 {
     "accessId": "STTA0001",
     "service": "BB-100-10",
@@ -39,6 +40,7 @@ HTTP/1.1 201 CREATED
 Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
 Location: /api/2.2/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 Content-Type: application/json
+
 {
     "path": "/api/2.2/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
@@ -55,6 +57,7 @@ Request:
 ```http
 POST /api/2.2/orders/ HTTP/1.1
 Content-Type: application/json
+
 {
     "accessId": "STTA0001",
     "service": "BB-100-10",
@@ -68,6 +71,7 @@ HTTP/1.1 201 CREATED
 Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
 Location: /api/2.2/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 Content-Type: application/json
+
 {
     "path": "/api/2.2/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
@@ -234,6 +238,7 @@ Det skall ske vid:
 ```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
+
 { "cause": "Missing customer.firstName" }
 ```
 
@@ -243,6 +248,7 @@ Exempel: Bredband 100/100 är aktivt vid beställning av Bredband 10/10.:
 ```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
+
 { "cause": "Another Service of ServiceType 'Broadband' is already active." }
 ```
 
@@ -251,6 +257,7 @@ Om tjänsten redan har en aktiv order:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
     "path": "/api/2.2/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
@@ -266,6 +273,7 @@ Om tjänsten redan är aktiv vid `ACTIVATE`, eller inaktiv vid `DEACTIVATE`:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
     "accessId": "STTA0001",
     "service": "BB-100-10",
@@ -280,6 +288,7 @@ Om tjänsten (tjänstetypen) inte går att beställa för att den är tagen av e
 ```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
+
 { "cause": "ServiceType is already claimed by other Service Provider." }
 ```
 
@@ -295,6 +304,7 @@ Response:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
     "path": "/api/2.2/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",

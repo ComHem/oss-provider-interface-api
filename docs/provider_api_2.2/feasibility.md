@@ -234,7 +234,7 @@ Av den anledningen är "Last-Modified" obligatoriskt vid HTTP Status 200.
 
 Se [RFC-2616][rfc2616-sec14]. Exemplen använder ingen autentisering.
 
-```http
+```
 If-Modified-Since = "If-Modified-Since" ":" HTTP-date
 ```
 

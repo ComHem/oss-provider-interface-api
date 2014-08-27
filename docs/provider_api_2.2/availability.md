@@ -6,13 +6,15 @@ Typiskt används frågan för att kunna svara kund om vilka tjänster som är le
 
 ### Exempel
 
-```json
 Request:
-    GET /api/2.2/accesses/STTA0001 HTTP/1.1
+```http
+GET /api/2.2/accesses/STTA0001 HTTP/1.1
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "accessId": "STTA0001",
     "streetName": "Testvägen",

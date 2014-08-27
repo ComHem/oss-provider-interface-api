@@ -10,5 +10,5 @@ Innehåller operationer med följande syften:
 
 
 1. [Ändringar sedan 2.1](changelog.md)
-2. [Feasibility API](feasibility.md5)
-3. [Availability API](availability.md5)
+2. [Feasibility API](feasibility.md)
+3. [Availability API](availability.md)

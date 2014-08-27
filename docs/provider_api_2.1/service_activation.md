@@ -2,10 +2,11 @@
 
 ## Orderläggning, Exempel: Aktivering
 
-```json
 Request:
-    POST /api/2.1/orders/ HTTP/1.1
-    Content-Type: application/json
+```http
+POST /api/2.1/orders/ HTTP/1.1
+Content-Type: application/json
+
 {
     "accessId": "STTA0001",
     "service": "BB-100-10",
@@ -31,12 +32,15 @@ Request:
         { "vendorId": "CH_BROADBAND" }
     ]
 }
+```
 
 Response:
-    HTTP/1.1 201 CREATED
-    Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-    Location: /api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
-    Content-Type: application/json
+```http
+HTTP/1.1 201 CREATED
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Location: /api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+Content-Type: application/json
+
 {
     "path": "/api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
@@ -49,21 +53,25 @@ Response:
 
 ## Orderläggning, Exempel: Avaktivering
 
-```json
 Request:
-    POST /api/2.1/orders/ HTTP/1.1
-    Content-Type: application/json
+```http
+POST /api/2.1/orders/ HTTP/1.1
+Content-Type: application/json
+
 {
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "DEACTIVATE"
 }
+```
 
 Response:
-    HTTP/1.1 201 CREATED
-    Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-    Location: /api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
-    Content-Type: application/json
+```http
+HTTP/1.1 201 CREATED
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Location: /api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+Content-Type: application/json
+
 {
     "path": "/api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
@@ -202,10 +210,11 @@ Response:
 
 Vid order med korrekt format och korrekt innehåll skall svaret se ut på följande sätt:
 
-```json
+```http
 HTTP/1.1 201 CREATED
 Content-Type: application/json
 Location: /api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+
 {
     "path": "/api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
@@ -227,26 +236,29 @@ Det skall ske vid:
 * Felaktig Service för acceses.
 * Felaktig kunddata.
 
-```json
+```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
+
 { "cause": "Missing customer.firstName" }
 ```
 
 Om en annan tjänst med samma tjänstetyp redan är aktiv. 
 Exempel: Bredband 100/100 är aktivt vid beställning av Bredband 10/10.:
 
-```json
+```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
+
 { "cause": "Another Service of ServiceType 'Broadband' is already active." }
 ```
 
 Om tjänsten redan har en aktiv order:
 
-```json
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
     "path": "/api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
@@ -259,9 +271,10 @@ Content-Type: application/json
 
 Om tjänsten redan är aktiv vid ACTIVATE, eller inaktiv vid DEACTIVATE:
 
-```json
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
     "accessId": "STTA0001",
     "service": "BB-100-10",
@@ -273,22 +286,26 @@ Content-Type: application/json
 
 Om tjänsten (tjänstetypen) inte går att beställa för att den är tagen av en annan Service Provider:
 
-```json
+```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
+
 { "cause": "ServiceType is already claimed by other Service Provider." }
 ```
 
 
 ## Hämtning av Order Status - Exempel
 
-```json
 Request:
-    GET /api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061 HTTP/1.1
+```http
+GET /api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061 HTTP/1.1
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "path": "/api/2.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",

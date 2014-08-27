@@ -214,6 +214,7 @@ Vid order med korrekt format och korrekt innehåll skall svaret se ut på följa
 HTTP/1.1 201 CREATED
 Content-Type: application/json
 Location: /api/2.2/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+
 {
     "path": "/api/2.2/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",

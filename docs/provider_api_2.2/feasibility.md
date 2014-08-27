@@ -10,7 +10,7 @@ GET /api/2.2/accesses/ HTTP/1.1
 ```
 
 Response:
-```
+```http+json
 HTTP/1.1 200 OK
 Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
 Content-Type: application/json

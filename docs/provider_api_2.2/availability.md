@@ -74,7 +74,7 @@ Response:
 
 ## Fältbeskrivningar
 
-Listan omfattar de fält som Availability definererar _utöver_ <a href="provider_interface_2.2_feasibility.html">Feasibility</a>.
+Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibility.md">Feasibility</a>.
 
 * `null` är inte ett giltigt värde för något fält.
 * Fält markerade med _obligatoriskt_ får inte vara tomma stängen (`""`)
@@ -163,7 +163,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="provide
             </td>
             <td>
                 Fältet används av Com Hem för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. Se <em>text, obligatoriskt</em><br>
-                <a href="provider_interface_2.2_option82.html">Option82 format</a>
+                <a href="option82.md">Option82 format</a>
                 <br>
                 Exempel: "5216010765746820302F31020B31302E31302E31302E3130"<br/>
             </td>
@@ -174,7 +174,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="provide
             </td>
             <td>
                 Lista av utrustning som Com Hem angett för tjänsten.<br>
-                Se <a href="provider_interface_2.2_service_activation.html">Service Activation</a> för mer information.
+                Se <a href="service_activation.md">Service Activation</a> för mer information.
             </td>
         </tr>
     </tbody>

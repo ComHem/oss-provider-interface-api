@@ -265,7 +265,7 @@ Content-Type: application/xml
 Om det inte finns uppdaterade poster ser svaret istället ut såhär:
 
 Response:
-```
+```http
 HTTP/1.1 304 Not Modified
 Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
 Content-Type: application/xml

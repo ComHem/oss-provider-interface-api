@@ -31,3 +31,10 @@ unkt. _Availability_-frågor används ofta interaktivt, exempelvis under konvers
 1. [Ändringar sedan 2.1](changelog.md)
 2. [Feasibility API](feasibility.md)
 3. [Availability API](availability.md)
+4. [Service Activation API](service_activation.md)
+5. [Order Events API](order_events.md)
+6. [Option82 Lookup API](option82_lookup.md)
+7. [Option82](option82.md)
+8. [Övergripande](misc.md)
+
+

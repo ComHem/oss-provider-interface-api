@@ -6,7 +6,7 @@ Order Event API erbjuder möjlighet att fråga om alla nya Order Event sedan sen
 
 API:et används enbart då en orderläggning resulterar i state `RECEIVED`.
 
-Fälten beskrivs i <a href="provider_interface_2.2_service_activation.html">Service Activation API</a>.
+Fälten beskrivs i <a href="service_activation.md">Service Activation API</a>.
 
 ## Exempel: Hämtning av nya events
 

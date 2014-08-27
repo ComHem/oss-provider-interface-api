@@ -1,6 +1,6 @@
 # Provider Interface API V2.2
 
-API mellan tjänsteleverantör (SP) och kommunikationsoperatörer (KO).
+API mellan tjänsteleverantör (SP eller TL) och kommunikationsoperatörer (KO eller CO).
 
 Innehåller operationer med följande syften:
 * Hämta säljdata/univers från KO.

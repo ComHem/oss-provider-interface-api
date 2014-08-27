@@ -1,6 +1,3 @@
----
-out:provider_interface_2.2_changelog.html
----
 # Ändringar från Provider Interface API V2.2
 
 ## Separation mellan Feasibility (Bulk) och Availability (per Access)

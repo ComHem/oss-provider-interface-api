@@ -4,16 +4,16 @@ Com Hem använder Feasibility API för att kunna hitta avlämningspunkter och sv
 
 ## Exempel
 
-```http
 Request:
-    GET /api/2.2/accesses/ HTTP/1.1
+```json
+GET /api/2.2/accesses/ HTTP/1.1
 ```
 
-```http
 Response:
-    HTTP/1.1 200 OK
-    Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-    Content-Type: application/json
+```json
+HTTP/1.1 200 OK
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Content-Type: application/json
 [
     {
         "accessId": "STTA0001",

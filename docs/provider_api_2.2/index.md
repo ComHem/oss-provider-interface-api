@@ -7,6 +7,17 @@ Innehåller operationer med följande syften:
 * Beställa tjänster hos KO.
 * Hämta tekniska detaljer och status på aktiva tjänster ho KO.
 
+## Innehåll
+
+1. [Ändringar sedan 2.1](changelog.md)
+2. [Feasibility API](feasibility.md)
+3. [Availability API](availability.md)
+4. [Service Activation API](service_activation.md)
+5. [Order Events API](order_events.md)
+6. [Option82 Lookup API](option82_lookup.md)
+7. [Option82](option82.md)
+8. [Övergripande](misc.md)
+
 ## Terminologi
 
 ### Access
@@ -24,16 +35,3 @@ kund för att identifiera specifik _access_ att aktivera.
 ### Availability
 
 Com Hem definierar _Availability_ som aktuell status vilka tjänster som är aktiva och vilka som går att leverera på en specifik avlämningspunkt. _Availability_-frågor används ofta interaktivt, exempelvis under konversation med potentiell slutkund.
-
-## Innehåll
-
-1. [Ändringar sedan 2.1](changelog.md)
-2. [Feasibility API](feasibility.md)
-3. [Availability API](availability.md)
-4. [Service Activation API](service_activation.md)
-5. [Order Events API](order_events.md)
-6. [Option82 Lookup API](option82_lookup.md)
-7. [Option82](option82.md)
-8. [Övergripande](misc.md)
-
-

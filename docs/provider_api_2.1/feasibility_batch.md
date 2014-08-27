@@ -4,14 +4,17 @@ Com Hem använder Feasibility API för att beskriva vilka accesser/adresser som 
 
 ## Exempel
 
-```json
 Request:
-    GET /api/2.1/accesses/ HTTP/1.1
+```http
+GET /api/2.1/accesses/ HTTP/1.1
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Content-Type: application/json
+
 [
     {
         "accessId": "STTA0001", 
@@ -210,7 +213,6 @@ Response:
                 Anger accessens tjänster och feasibility per tjänst. Se fält per tjänst nedan. <br/>
                 Oavsett vilken Service Provider som hämtar feasibility-data skall services innehålla samma information.<br/>
                 <em>obligatorisk</em><br/>
-                Förteckning över <a href="Tekniska+tj%C3%A4nster.html">Tekniska Tjänster</a>.
             </td>
         </tr>
         <tr>
@@ -300,7 +302,7 @@ Response:
             </td>
             <td>
                 Lista av utrustning som Com Hem angett för tjänsten.<br>
-                Se <a href="provider_interface_2.1_service_activation.html">Service Activation</a> för mer information.
+                Se <a href="service_activation.md">Service Activation</a> för mer information.
             </td>
         </tr>
         <tr>
@@ -348,41 +350,43 @@ If-Modified-Since = "If-Modified-Since" ":" HTTP-date
 
 Exempel på anropssekvens:
 
-```
 Request:
-    GET /api/2.1/accesses/ HTTP/1.1
+```http
+GET /api/2.1/accesses/ HTTP/1.1
+```
 
 Response:
-    HTTP/1.1 200 OK
-    Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Content-Type: application/json
 ...
 ```
 
 Vid påföljande anrop skickar Com Hem PI med "If-Modified-Since"-header för att bara be om uppdaterade poster.
 
-```
 Request:
-    GET /api/2.1/accesses/ HTTP/1.1
-    If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
+```http
+GET /api/2.1/accesses/ HTTP/1.1
+If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
 ...
 ```
 
 Om det finns uppdaterade poster kan svaret se ut såhär:
 
-```
 Response:
-    HTTP/1.1 200 OK
-    Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
-    Content-Type: application/json
+```http
+HTTP/1.1 200 OK
+Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
+Content-Type: application/json
 ...
 ```
 
 Om det inte finns uppdaterade poster ser svaret istället ut såhär:
 
-```
 Response:
-    HTTP/1.1 304 Not Modified
+```http
+HTTP/1.1 304 Not Modified
 ```
 
 ## <a id="option82"></a> Option82 format

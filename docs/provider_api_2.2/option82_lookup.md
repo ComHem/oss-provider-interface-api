@@ -12,17 +12,20 @@ Om DHCP-loggen enbart innehåller RemoteId, kommer anropet enbart innehålla Rem
 
 Request:
 ```http
-GET /api/2.2/option82/5216010765746820302F31020B31302E31302E31302E3130 HTTP/1.1
 ```
 
 Response:
 ```http
-HTTP/1.1 200 OK
-Content-Type: application/json
+Request:
+    GET /api/2.2/option82/5216010765746820302F31020B31302E31302E31302E3130 HTTP/1.1
 
-{
-    "accessId": "SMBA0002"
-}
+Response:
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    
+    {
+        "accessId": "SMBA0002"
+    }
 ```
 
 Option82 är case-insensitive.

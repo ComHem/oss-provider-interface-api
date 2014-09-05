@@ -1,11 +1,14 @@
 # Provider Interface API V2.2
 
-API mellan tjänsteleverantör (SP eller TL) och kommunikationsoperatörer (KO eller CO).
+Leverantörsoberoende öppet API för effektivt systemsamarbete mellan tjänsteleverantörer (TL eller SP), öppna nät (ÖN) och kommunikationsoperatörer (KO eller CO).
+
+API exponerar de accesser som ställs till förfogande för tjänsteleverantörer att leverera sina tjänster på. På de accesser som exponeras kan sedan tekniska tjänster beställas, avbeställas och konsolideras.
 
 Innehåller operationer med följande syften:
 * Hämta säljdata/univers från KO.
 * Beställa tjänster hos KO.
 * Hämta tekniska detaljer och status på aktiva tjänster hos KO.
+* Stöd för autoaktivering.
 
 ## Innehåll
 
@@ -22,16 +25,13 @@ Innehåller operationer med följande syften:
 
 ### Access
 
-Com Hem definierar en _Access_ som en avlämningspunkt som måste aktiveras för att en slutkund skall få tjänst, typiskt en port i en access-
-switch.
+En _Access_ definieras som en avlämningspunkt som måste aktiveras för att en slutkund skall få tjänst. Utgörs typiskt av en port i en access-switch, förbindelsen till och uttaget i bostaden.
 
 ### Feasibility
 
-Com Hem definierar _Feasibility_ som lista med _accesser_ med tillhörande data för unikt kunna identifiera accesser (adress, lägenhetsbetec
-kningar etc.) och vilka tjänster som är potentiellt beställningsbara (per _access_). _Feasibility_ omfattar inte om tjänsterna är aktiverad
-e eller inte. _Feasibility_ används till säljkampanjer, täckningskartor och liknande. _Feasiblitity_ kan även användas vid kontakt med slut
-kund för att identifiera specifik _access_ att aktivera.
+_Feasibility_ definieras som lista med _accesser_ med tillhörande data för att unikt kunna identifiera accesser (adress, lägenhetsbeteckningar etc.) och vilka tekniska tjänster som är potentiellt beställningsbara (per _access_). _Feasibility_ omfattar inte om tjänsterna är aktiva eller tillgängliga. _Feasibility_ används till säljkampanjer, täckningskartor och liknande. _Feasiblitity_ används även vid kontakt med slutkund för att identifiera vilken specifik _access_ som tjänster skall aktiveras på.
 
 ### Availability
 
-Com Hem definierar _Availability_ som aktuell status vilka tjänster som är aktiva och vilka som går att leverera på en specifik avlämningspunkt. _Availability_-frågor används ofta interaktivt, exempelvis under konversation med potentiell slutkund.
+_Availability_ definieras som aktuell status på vilka tjänster som är aktiva och vilka som går att leverera på en specifik access. _Availability_-frågor används ofta interaktivt, exempelvis under konversation med potentiell slutkund. KO kan med hjälp av _Availability_ indikera om en teknisk tjänst är "upptagen" av en annan TL.
+

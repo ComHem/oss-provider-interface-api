@@ -35,3 +35,7 @@ _Feasibility_ definieras som lista med _accesser_ med tillhörande data för att
 
 _Availability_ definieras som aktuell status på vilka tjänster som är aktiva och vilka som går att leverera på en specifik access. _Availability_-frågor används ofta interaktivt, exempelvis under konversation med potentiell slutkund. KO kan med hjälp av _Availability_ indikera om en teknisk tjänst är "upptagen" av en annan TL.
 
+### Teknisk Tjänst
+
+En _Teknisk Tjänst_ definieras som en tjänst, vars realisation är unik. Det skall alltså endast finnas en teknisk tjänst med samma nätkonfiguration. Det betyder att det inte får finnas olika tekniska tjänster beroende på pris, bindningstid eller andra erbjudanden. 
+_Tekniska Tjänster_ skall även vara ortogonala mot andra tekniska tjänster av annan tjänstetyp. Tjänstetyp är Bredband, Telefoni och TV. En _Teknisk Tjänst_ får inte avse mer än en tjänstetyp. Det betyder att det inte får finnas tekniska tjänster som avser flera tjänster, exempelvis "Bredband 10/10 + TV".

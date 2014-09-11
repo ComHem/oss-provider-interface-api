@@ -1,12 +1,14 @@
-# Ändringar från API 2.2.
+# Ändringar mot tidigare versioner
 
-## AccessID får innehålla '.' och '-'
+## Nytt i API 2.2.1
+
+### AccessID får innehålla '.' och '-'
 
 Validering för AccessID har utökats till att tillåta '.' och '-'.
 
-# Ändringar från API V2.1.
+## Nytt i API 2.2
 
-## Separation mellan Feasibility (Bulk) och Availability (per Access)
+### Separation mellan Feasibility (Bulk) och Availability (per Access)
 
 Bulk-APIt kallas framledes "Feasibility API" och "Per Access-API" kallas framledes "Availability API".
 Feasibility har förenklats. Bakgrunden är att Feasibility skall bli enklare och billigare att implementera.
@@ -18,11 +20,11 @@ Availability finns endast per Access vid behov och kan därmed implementeras enk
 * Feasibility: Active är borttaget.
 * Availability: Services.serviceType borttaget.
 
-## Event-baserad Orderstatus
+### Event-baserad Orderstatus
 
 Ett nytt API, som del av Service Activation API, ger möjlighet att fråga om Order Status i bulk. Det betyder att Tjänsteleverantörer kan fråga oftare samtidigt som det är ett stort antal utestående ordrar.
 
-## API för uppslag av AccessID för givet Option82
+### API för uppslag av AccessID för givet Option82
 
 För att stöda utrustningsbaserad autoaktivering behöver Com Hem kunna slå upp vilket AccessID ett Option82 avser.
 

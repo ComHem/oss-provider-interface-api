@@ -1,4 +1,10 @@
-# Ändringar från Provider Interface API V2.2
+# Ändringar från API 2.2.
+
+## AccessID får innehålla '.' och '-'
+
+Validering för AccessID har utökats till att tillåta '.' och '-'.
+
+# Ändringar från API V2.1.
 
 ## Separation mellan Feasibility (Bulk) och Availability (per Access)
 

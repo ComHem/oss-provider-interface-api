@@ -68,7 +68,7 @@ Content-Type: application/json
                 <code>accessId</code>
             </td>
             <td>
-                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Com Hem förväntar sig att all kommunikation om en avlämningspunkt sker med samma AccessId. Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
+                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Com Hem förväntar sig att all kommunikation om en avlämningspunkt sker med samma AccessId. Får enbart bestå av tecknen a-z, A-Z, 0-9, '-' och '.'. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9-.]+</em>
             </td>
         </tr>
         <tr>

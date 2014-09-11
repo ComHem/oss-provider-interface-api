@@ -12,7 +12,7 @@ Innehåller operationer med följande syften:
 
 ## Innehåll
 
-1. [Ändringar sedan 2.1](changelog.md)
+1. [Ändringar mot tidigare versioner](changelog.md)
 2. [Feasibility API](feasibility.md)
 3. [Availability API](availability.md)
 4. [Service Activation API](service_activation.md)

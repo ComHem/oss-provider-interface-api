@@ -4,12 +4,6 @@ Leverantörsoberoende öppet API för effektivt systemsamarbete mellan tjänstel
 
 API exponerar de accesser som ställs till förfogande för tjänsteleverantörer att leverera sina tjänster på. På de accesser som exponeras kan sedan tekniska tjänster beställas, avbeställas och konsolideras.
 
-Innehåller operationer med följande syften:
-* Hämta säljdata/univers från KO.
-* Beställa tjänster hos KO.
-* Hämta tekniska detaljer och status på aktiva tjänster hos KO.
-* Stöd för autoaktivering.
-
 ## Versioner
 
 * [API 2.2](docs/provider_api_2.2/index.md)

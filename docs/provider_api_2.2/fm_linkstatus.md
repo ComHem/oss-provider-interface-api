@@ -21,8 +21,8 @@ Content-Type: application/json
 	"mbps": 1000,
 	"clients": [
 	    {
-		"mac": "00:0F:94:3A:3B:B9",
-		"ip": "80.217.15.66"
+		"mac": "DE:AD:BE:EF:00:01",
+		"ip": "10.10.1.181"
 	    }
 	]
     }
@@ -103,7 +103,7 @@ Content-Type: application/json
             	MAC-adress på enheten.<br>
 		MAC-adressen representeras genom 6 hexadecimala siffror konkatenerade med kolon ':'. Den skall utelstutande vara i uppercase.<br>
 		MAC-adressen är alltid exakt 17 tecken lång.<br>
-		Exempel: "00:0F:94:3A:3B:B9".  
+		Exempel: "DE:AD:BE:EF:00:01".  
 	    </td>
         </tr>
         <tr>

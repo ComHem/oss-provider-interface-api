@@ -24,7 +24,7 @@ Content-Type: application/json
 		"clients": [
 			{
 				"mac": "DE:AD:BE:EF:00:01",
-				"ip": "10.10.1.181"
+				"ipv4": "10.10.1.181"
 			}
 		]
 	}

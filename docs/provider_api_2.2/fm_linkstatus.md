@@ -1,6 +1,6 @@
 # Fault Management: Link Status API
 
-Link Status API används för felsökning av tjänster. Det erbjuder aktuell information of kunds ports länk i access-switch/router.
+Link Status API används för felsökning av tjänster. Det erbjuder aktuell information of kunds länk i access-switch/router.
 
 ### Exempel
 

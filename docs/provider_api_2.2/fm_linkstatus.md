@@ -127,7 +127,7 @@ Content-Type: application/json
             <td>
 	    	Tilldelad IPv6-adress på enheten.<br>
 		IP-adress representeras som åtta hexadecimala tal mellan 0 och ffff konkatenerade med kolon ':'.<br>
-		Noden skall enbart finnas när enheten har en ipv6-adress.
+		Noden skall enbart finnas när enheten har en ipv6-adress.<br>
 		Exempel: "2001:0db8:85a3:0000:0000:8a2e:0370:7334".
             </td>
         </tr>

@@ -4,12 +4,14 @@ Link Status API används för felsökning av tjänster. Det erbjuder aktuell inf
 
 ### Exempel
 
-Request:
+Anrop:
+
 ```http
 GET /api/2.2/accesses/STTA0001/link HTTP/1.1
 ```
 
-Response:
+Svar när länken är uppe:
+
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -29,7 +31,8 @@ Content-Type: application/json
 }
 ```
 
-Response:
+Svar när länken är nere:
+
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json

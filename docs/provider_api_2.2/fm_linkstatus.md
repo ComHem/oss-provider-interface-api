@@ -115,8 +115,8 @@ Content-Type: application/json
             </td>
             <td>
 	    	Tilldelad IPv4-adress på enheten.<br>
-		IP-adress representeras som fyra decimala tal mellan 0 och 255 konkatenerade med punkter.<br>
-		Noden skall enbart finnas när enheten har en ipv4-adress.
+		IP-adress representeras som fyra decimala tal mellan 0 och 255 konkatenerade med punkter'.'.<br>
+		Noden skall enbart finnas när enheten har en ipv4-adress.<br>
 		Exempel: "10.101.1.181".
             </td>
         </tr>

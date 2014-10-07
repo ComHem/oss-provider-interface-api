@@ -104,7 +104,7 @@ Content-Type: application/json
             </td>
             <td>
             	MAC-adress på enheten.<br>
-		MAC-adressen representeras genom 6 hexadecimala siffror konkatenerade med kolon ':'. Den skall utelstutande vara i uppercase.<br>
+		MAC-adressen representeras genom 6 par av hexadecimala siffror konkatenerade med kolon ':'. Den skall utelstutande vara i uppercase.<br>
 		MAC-adressen är alltid exakt 17 tecken lång.<br>
 		Exempel: "DE:AD:BE:EF:00:01".  
 	    </td>
@@ -114,7 +114,9 @@ Content-Type: application/json
                 <code>up / clients / ip</code>
             </td>
             <td>
-	    	Tilldelad IP-adress på enheten.
+	    	Tilldelad IP-adress på enheten.<br>
+		IP-adress representeras som fyra decimala tal mellan 0 och 255 konkatenerade med punkter.<br>
+		Exempel: "10.101.1.181"
             </td>
         </tr>
     </tbody>

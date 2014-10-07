@@ -15,17 +15,17 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-    "link": "UP",
-    "up": {
-	"since": "2014-08-14T14:09:23Z",
-	"mbps": 1000,
-	"clients": [
-	    {
-		"mac": "DE:AD:BE:EF:00:01",
-		"ip": "10.10.1.181"
-	    }
-	]
-    }
+	"link": "UP",
+	"up": {
+		"since": "2014-08-14T14:09:23Z",
+		"mbps": 1000,
+		"clients": [
+			{
+				"mac": "DE:AD:BE:EF:00:01",
+				"ip": "10.10.1.181"
+			}
+		]
+	}
 }
 ```
 
@@ -35,7 +35,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-    "link": "DOWN"
+	"link": "DOWN"
 }
 ```
 

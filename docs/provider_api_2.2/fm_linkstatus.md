@@ -13,6 +13,7 @@ Response:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
     "link": "UP",
     "up": {
@@ -32,6 +33,7 @@ Response:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
     "link": "DOWN"
 }

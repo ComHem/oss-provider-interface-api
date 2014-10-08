@@ -24,7 +24,7 @@ Content-Type: application/json
 		"clients": [
 			{
 				"mac": "DE:AD:BE:EF:00:01",
-				"ipv4": "10.10.1.181"
+				"ip": "10.10.1.181"
 			}
 		]
 	}
@@ -111,24 +111,13 @@ Content-Type: application/json
         </tr>
         <tr>
             <td>
-                <code>up / clients / ipv4</code>
+                <code>up / clients / ip</code>
             </td>
             <td>
 	    	Tilldelad IPv4-adress på enheten.<br>
 		IP-adress representeras som fyra decimala tal mellan 0 och 255 konkatenerade med punkter'.'.<br>
 		Noden skall enbart finnas när enheten har en ipv4-adress.<br>
 		Exempel: "10.101.1.181".
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>up / clients / ipv6</code>
-            </td>
-            <td>
-	    	Tilldelad IPv6-adress på enheten.<br>
-		IP-adress representeras som åtta hexadecimala tal mellan 0 och ffff konkatenerade med kolon ':'.<br>
-		Noden skall enbart finnas när enheten har en ipv6-adress.<br>
-		Exempel: "2001:0db8:85a3:0000:0000:8a2e:0370:7334".
             </td>
         </tr>
      </tbody>

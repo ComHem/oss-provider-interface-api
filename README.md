@@ -1,4 +1,4 @@
-# Com Hem Provider Interface
+# Provider Interface
 
 Leverantörsoberoende öppet API för effektivt systemsamarbete mellan tjänsteleverantörer (TL eller SP), öppna nät (ÖN) och kommunikationsoperatörer (KO eller CO).
 

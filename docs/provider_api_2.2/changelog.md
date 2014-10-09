@@ -1,5 +1,11 @@
 # Ändringar mot tidigare versioner
 
+## Nytt i API 2.2.2
+
+### Nytt API: FM Link Status API
+
+API för att se länkstatus för felsökning är tillagt genom FM Link Status API.
+
 ## Nytt i API 2.2.1
 
 ### AccessID får innehålla '.' och '-'

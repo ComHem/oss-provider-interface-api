@@ -1,4 +1,4 @@
-# Provider Interface API 2.2.2
+# Provider Interface API 2.2.3
 
 Leverantörsoberoende öppet API för effektivt systemsamarbete mellan tjänsteleverantörer (TL eller SP), öppna nät (ÖN) och kommunikationsoperatörer (KO eller CO).
 

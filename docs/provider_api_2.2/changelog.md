@@ -1,5 +1,11 @@
 # Ändringar mot tidigare versioner
 
+## Nytt i API 2.2.3
+
+### Stöd för `outletId` i Feasibility och Availability.
+
+I vissa sammanhang känner slutkunden till sitt uttagsnummer och använder det i kommunikationen med TL.
+
 ## Nytt i API 2.2.2
 
 ### Nytt API: FM Link Status API

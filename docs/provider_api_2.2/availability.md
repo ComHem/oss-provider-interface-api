@@ -27,6 +27,7 @@ Content-Type: application/json
     "premisesType": "MDU_APARTMENT",
     "mduApartmentNumber": "1001",
     "mduDistinguisher": "12121212",
+    "outlet": "A-11-14",
     "population": "Hemsöhem",
     "services": [
         {

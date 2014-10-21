@@ -26,6 +26,7 @@ Content-Type: application/json
         "premisesType": "MDU_APARTMENT",
         "mduApartmentNumber": "1001",
         "mduDistinguisher": "12121212",
+        "outlet": "A-11-14",
         "population": "Hemsöhem",
         "services": [
             {
@@ -157,6 +158,14 @@ Content-Type: application/json
 								Exempel: 28, 65113, 1234-1919.<br>
 								<br>
 	              [2] En av <code>mduApartmentNumber</code>, <code>mduDistinguisher</code> måste finnas om <code>premisesType</code> är <code>"MDU_APARTMENT"</code>.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>outlet</code>
+            </td>
+            <td>
+                Uttagsnummer som identifierar porten i lägenhet/villa. Typiskt är porten hos slutkund märkt med uttagsnummer. Outlet behöver vara unikt per adress. <em>text</em>
             </td>
         </tr>
         <tr>

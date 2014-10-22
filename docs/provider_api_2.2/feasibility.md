@@ -1,6 +1,6 @@
 # Feasibility API
 
-Com Hem använder Feasibility API för att kunna hitta avlämningspunkter och svara på om en fastighet/lägenhet är inkopplad i ett nät. Com Hem ser även vilken teknisk kapacitet varje access har genom de tjänster som är definierade på accessen.
+Com Hem använder Feasibility API för att kunna hitta avlämningspunkter och svara på om en fastighet/lägenhet är inkopplad i ett nät. Com Hem ser även vilken teknisk kapacitet varje access har genom de tekniska tjänster som är definierade på accessen.
 
 ## Exempel
 
@@ -181,7 +181,7 @@ Content-Type: application/json
                 <code>services</code>
             </td>
             <td>
-                Anger accessens tjänster och feasibility per tjänst. Se fält per tjänst nedan. <br/>
+                Anger accessens tekniska tjänster och feasibility per teknisk tjänst. För beskrivning, se följande två rader. <br/>
                 Oavsett vilken Service Provider som hämtar feasibility-data skall services innehålla samma information.<br/>
                 <em>obligatorisk</em>
             </td>
@@ -191,7 +191,7 @@ Content-Type: application/json
                 <code>services / service</code>
             </td>
             <td>
-                Id/namn på tjänst som avses. Tjänsten kan beställas via Service Activation API. <em>obligatorisk</em>
+                Id/namn på tekniskt tjänst som avses. Den tekniska tjänsten kan beställas via Service Activation API. <em>obligatorisk</em>
             </td>
         </tr>
         <tr>

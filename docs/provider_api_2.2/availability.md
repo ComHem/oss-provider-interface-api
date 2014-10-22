@@ -2,7 +2,7 @@
 
 Availability ger samma information som Feasibility-API, men enbart för en access.
 Dessutom svarar det med information som kan vara kostsammare att producera och av naturen behöver vara aktuell.
-Typiskt används frågan för att kunna svara kund om vilka tjänster som är lediga, med hänsyn taget till andra tjänsteleverantörer.
+Typiskt används frågan för att kunna svara kund om vilka tekniska tjänster som är lediga, med hänsyn taget till andra tjänsteleverantörer.
 
 ### Exempel
 
@@ -104,7 +104,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>services / service</code>
             </td>
             <td>
-                Id/namn på tjänst som avses. Tjänsten kan beställas via Service Activation API. <em>obligatorisk</em>
+                Id/namn på teknisk tjänst som avses. Den tekniska tjänsten kan beställas via Service Activation API. <em>obligatorisk</em>
             </td>
         </tr>
         <tr>
@@ -124,7 +124,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>services / available</code>
             </td>
             <td>
-                Anger om/när tjänsten är tillgänglig för beställning och leverans. Om tjänsten inte kan levereras, exempelvis på grund av att den är upptagen av annan SP indikeras det med "NO" eller datum då tjänsten blir tillgänglig. Datumet får tidigast vara 1970-01-01.<br/>
+                Anger om/när teknisk tjänst är/blir tillgänglig för beställning och leverans. Om tjänsten inte kan levereras, exempelvis på grund av att den är upptagen av annan SP indikeras det med "NO" eller datum då tjänsten blir tillgänglig. Datumet får tidigast vara 1970-01-01.<br/>
                 <br/>
                 Innan tjänsten är tillgänglig första gången sammanfaller Available och Connection.<br/>
                 <br/>

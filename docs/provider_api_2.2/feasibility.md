@@ -181,7 +181,7 @@ Content-Type: application/json
                 <code>services</code>
             </td>
             <td>
-                Anger accessens tekniska tjänster och feasibility per teknisk tjänst. För beskrivning, se följande två rader. <br/>
+                Anger accessens tekniska tjänster och feasibility per teknisk tjänst. För beskrivning, se följande två rader i listan över fältbeskrivningar. <br/>
                 Oavsett vilken Service Provider som hämtar feasibility-data skall services innehålla samma information.<br/>
                 <em>obligatorisk</em>
             </td>

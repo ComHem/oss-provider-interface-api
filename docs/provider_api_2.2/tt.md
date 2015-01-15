@@ -1,4 +1,4 @@
-% TT - Trouble Tickets
+# TT - Trouble Tickets
 
 Trouble tickets används för att länka ärendehantering mellan operatörer på ett generellt och flexibelt sätt. För att kunna anpassa till speciella behov vid ärendeskapande som en kommunikationsoperatör har används mallar där obligatoriska/frivilliga fält i ett ärende kan specificeras. Grundtanken är att kommunikationsoperatören har ett eget system för ärendehantering där ett arbetsätt med flöden och statusar finns etablerat. Hela denna processen vill man inte behöva förklara/exponera till sina kunder (tjänsteleverantörer). Detta API tar fasta på ett antal statusar och informationsutbyten som kan på ett enkelt och tillräckligt sätt representera det informationsutbyte som är önskat mellan kommunikationsoperatör och tjänsteleverantör.
 

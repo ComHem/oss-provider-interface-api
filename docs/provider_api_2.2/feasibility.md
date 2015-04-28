@@ -247,8 +247,6 @@ Se [RFC-2616][rfc2616-sec14]. Exemplen använder ingen autentisering.
 If-Modified-Since = "If-Modified-Since" ":" HTTP-date
 ```
 
-När en access förekommer i ett svar skall den alltid skickas i sin helhet: med accessens samtliga fält och tjänster.
-
 ## Begränsningsmekanism - Exempel
 
 Exempel på anropssekvens:

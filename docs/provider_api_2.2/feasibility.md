@@ -56,7 +56,7 @@ Content-Type: application/json
 ## Fältbeskrivningar
 
 * `null` är inte ett giltigt värde för något fält.
-* Fält markerade med _obligatoriskt_ får inte vara tomma stängen (`""`)
+* Fält markerade med _obligatoriskt_ får inte vara tomma strängen (`""`)
 
 <table>
     <tbody>

@@ -124,12 +124,16 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>services / available</code>
             </td>
             <td>
-                Anger om/när teknisk tjänst är/blir tillgänglig för beställning och leverans. Om tjänsten inte kan levereras, exempelvis på grund av att den är upptagen av annan SP indikeras det med "NO" eller datum då tjänsten blir tillgänglig. Datumet får tidigast vara 1970-01-01.<br/>
+                Anger om/när teknisk tjänst är/blir tillgänglig för beställning och leverans.<br/>
+                Om tjänsten inte är tillgänglig för beställning av anropande TL skall det indikeras med "NO" eller datum då tjänsten blir tillgänglig.
+                <br/> Datumet får tidigast vara 1970-01-01.<br/>
                 <br/>
                 Innan tjänsten är tillgänglig första gången sammanfaller Available och Connection.<br/>
                 <br/>
                 <em>"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br/>
-                Exempel: YES, NO, 2012-07-01
+                Exempel: YES, NO, 2012-07-01<br>
+                Exempel: Anropande TL har BB 10/10 aktivt. BB 10/10, BB 100/100 kan beställas om BB 10/10 först avaktiveras. KO skall svara med available YES.<br>
+                Exempel: Annan TL har BB 10/10 aktivt. BB 10/10, 100/100 skall svara med NO eller datum.
             </td>
         </tr>
         <tr>

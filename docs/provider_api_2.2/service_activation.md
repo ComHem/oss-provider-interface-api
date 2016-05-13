@@ -113,8 +113,8 @@ Content-Type: application/json
                 <code>operation</code>
             </td>
             <td>
-               Anger om tjänsten skall aktiveras eller avaktiveras.<br>
-               Giltiga värden: "ACTIVATE", "DEACTIVATE". <em>text, obligatoriskt</em>
+               Anger om tjänsten skall aktiveras, avaktiveras, suspenderas eller avsuspenderas.<br>
+               Giltiga värden: "ACTIVATE", "DEACTIVATE", "SUSPEND", "UNSUSPEND". <em>text, obligatoriskt</em>
             </td>
         </tr>
         <tr>

@@ -142,7 +142,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
             </td>
             <td>
                 Anger om flaggan "force" i en beställning kommer att ha effekt.<br>
-                Alltså, är det möjligt att använda "force" (Forced Takeover) för att KO skall börja leverera Com Hems tjänst istället för annan SPs tjänst. <br>
+                Alltså, är det möjligt att använda "force" (Forced Takeover) för att KO skall börja leverera anropande TLs tjänst istället för annan TLs tjänst. <br>
                 Om Forced Takeover inte stöds skall <b>false</b> returneras.<br>
                 <em>true eller false, obligatoriskt</em>
             </td>
@@ -152,7 +152,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>active</code>
             </td>
             <td>
-                Lista över de tjänster som är aktiva på accessen för inloggad SP. <em>obligatorisk</em>
+                Lista över de tjänster som är aktiva på accessen för inloggad TL. <em>obligatorisk</em>
             </td>
         </tr>
         <tr>
@@ -170,7 +170,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>active / option82</code>
             </td>
             <td>
-                Fältet används av Com Hem för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. Se <em>text, obligatoriskt</em><br>
+                Fältet används av tjänsteleverantör för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. Se <em>text, obligatoriskt</em><br>
                 <a href="option82.md">Option82 format</a>
                 <br>
                 Exempel: "5216010765746820302F31020B31302E31302E31302E3130"<br/>
@@ -181,7 +181,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>active / equipment</code>
             </td>
             <td>
-                Lista av utrustning som Com Hem angett för tjänsten.<br>
+                Lista av utrustning som tjänsteleverantör angett för tjänsten.<br>
                 Se <a href="service_activation.md">Service Activation</a> för mer information.
             </td>
         </tr>

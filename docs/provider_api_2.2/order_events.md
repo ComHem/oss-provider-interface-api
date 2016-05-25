@@ -1,8 +1,8 @@
 # Order Events API
 
-Vid orderläggning i API 2.1 kan kommunikationsoperatören svara med state `RECEIVED`. Det betyder att tjänsteleverantören skall fråga regelbundet om ordern status. Com Hem har hittils valt att fråga en gång per order var 30:e minut.
+Vid orderläggning i API 2.1 kan kommunikationsoperatören svara med state `RECEIVED`. Det betyder att tjänsteleverantören skall fråga regelbundet om ordern status.
 
-Order Event API erbjuder möjlighet att fråga om alla nya Order Event sedan senaste anrop. Så att Com Hem kan ställa en fråga för status på alla utestående ordrar. På det viset kan intervallet mellan statushämtningar minskas och kunden får sina tjänster aktiverade snabbare.
+Order Event API erbjuder möjlighet att fråga om alla nya Order Event sedan senaste anrop. Så att Tjänsteleverantören kan ställa en fråga för status på alla utestående ordrar. På det viset kan intervallet mellan statushämtningar minskas och kunden får sina tjänster aktiverade snabbare.
 
 API:et används enbart då en orderläggning resulterar i state `RECEIVED`.
 
@@ -56,7 +56,7 @@ Av denna anledningen är det viktigt att tjänstens svar inte är en projektion 
 `event` skall vara unikt över alla events tjänsten har returnerat.
 Det måste inte vara ett UUID, utan KO kan bestämma innehållet så länge det är unikt.
 
-Listan över events skall vara stigande i kronologisk ordning (senaste eventet sist). Com Hem kommer att använda det sista lästa eventet som `since`-parameter i nästföljande anrop.
+Listan över events skall vara stigande i kronologisk ordning (senaste eventet sist). Tjänsteleverantören skall att använda det sista lästa eventet som `since`-parameter i nästföljande anrop.
 
 Enbart order-event av typen order.event `DONE_SUCCESS` eller `DONE_FAILED` får förekomma.
 

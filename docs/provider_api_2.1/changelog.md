@@ -24,7 +24,7 @@ Vid beställning av tjänster har det lagts till ett obligatoriskt fält ("force
 
 ## Stöd för att skicka och hämta Vendor-ID
 
-När kundplacerad utrustning av viss typ kan användas för flera tjänster - men kund enbart köpt en av dem - kan Com Hem ange Vendor-ID som styr hur utrustningstyp ska mappas till tjänst.
+När kundplacerad utrustning av viss typ kan användas för flera tjänster - men kund enbart köpt en av dem - kan Tjänsteleverantör ange Vendor-ID som styr hur utrustningstyp ska mappas till tjänst.
 
 * Nytt fält i Orderläggning: equipment
 * Nytt fält i Feasibility: active.equipment

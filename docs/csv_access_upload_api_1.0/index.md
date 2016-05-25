@@ -2,11 +2,11 @@
 
 ** Notera: Detta API är under utveckling och inte 100% stabiliserat. **
 
-Com Hem PI erbjuder ett API för att ladda upp CSV-filer innehållande accesser från kommunikationsoperatörer.
+Dokumentet innehåller ett CSV-format för att beskriva accesser som läses in från kommunikationsoperatörer.
 
 Med "access" menas en unik avlämningspunkt, alltså en port på en access-switch som terminas i exempelvis en lägenhet.
 
-Eftersom det är fördelaktigt att kunna hålla Com Hem PI uppdaterat och "i synk" med kommunikationsoperatören om det aktuella beståndet bör nya uppdaterade CSV-filer laddas upp frekvent.
+Eftersom det är fördelaktigt att kunna hålla Tjänsteleverantörs system uppdaterat och "i synk" med kommunikationsoperatören om det aktuella beståndet bör nya uppdaterade CSV-filer laddas upp frekvent.
 
 ## Exempel
 
@@ -39,7 +39,7 @@ Ur exemplet kan vi utläsa:
                 <code>accessId</code>
             </td>
             <td>
-                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Com Hem förväntar sig att all kommunikation om en avlämningspunkt sker med samma AccessId. Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
+                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
             </td>
         </tr>
         <tr>
@@ -105,11 +105,7 @@ Ur exemplet kan vi utläsa:
 </dl>
                 Vi tillåter även Lantmäteriets BYGGTYP, specificerad <a href="https://www.lantmateriet.se/Global/Fastigheter/Fastighetsinformation/%C3%85tkomsts%C3%A4tt/Termkatalog_OFF.pdf">här</a>.
                 Vi mappar deras värden mot våra typer såhär:
-                <table summary="Mappning mellan Lantmäteriets BYGGTYP och Com Hem premisesType">
-                <caption><em>Mappning från Lantmäteriets BYGGTYP till Com Hem premisesType</em></caption>
-                    <thead>
-                        <tr><td><strong>BYGGTYP ID</strong></td><td><strong>Com Hem premisesType</strong></td><td><strong>BYGGTYP beskrivning</strong></td></tr></strong>
-                    </thead>
+                <table>
                     <tbody>
                     <tr><td>01</td><td>PUBLIC</td><td>Badhus</td></tr>
                     <tr><td>02</td><td>PUBLIC</td><td>Brandstation</td></tr>
@@ -163,7 +159,7 @@ Ur exemplet kan vi utläsa:
                 <code>mduApartmentNumber</code>
             </td>
             <td>
-								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att Com Hem har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber, mduDistinguisher eller outletId kan Com Hem fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
+								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att TL har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber, mduDistinguisher eller outletId kan TL fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
 								<br>
 								Exempel: 1101, 0901, 1201, 1213.<br>
 								<br>
@@ -205,7 +201,7 @@ Ur exemplet kan vi utläsa:
                 <code>option82</code>
             </td>
             <td>
-                Fältet används av Com Hem för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. <em>text, obligatoriskt</em><br>
+                Fältet används av TL för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. <em>text, obligatoriskt</em><br>
                 <br>
                 Exempel: "192.168.248.85 ge-0/0/10"<br/>
             </td>
@@ -249,7 +245,7 @@ Ur exemplet kan vi utläsa:
                 <code>salesStartDate</code>
             </td>
             <td>
-                <b>Denna kolumn används inte längre men måste finnas för att existerande CSV-filer skall fungera!</b> När en access säljstartas konfigureras numera helt hos Com Hem (Sigma). <code>activationDate</code> kan väljas att användas till detta syfte.
+                Anger när tjänster kan börja säljas på accessen (inte levereras).
             </td>
         </tr>
     </tbody>

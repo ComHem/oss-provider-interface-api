@@ -1,11 +1,11 @@
 # Provider Interface API V1 (deprecated)
 
-Com Hem PI erbjuder ett API för att automatiskt hämta in accesser från kommunikationsoperatörer. 
-Detta sker genom ett HTTP REST / XML API som Com Hem PI anropar för att hämta kommunikationsoperatörens accesser. 
+Provider Interface API är ett API för att låta Tjänsteleverantörer automatiskt hämta in accesser från Kommunikationsoperatörer. 
+Detta sker genom ett HTTP REST / XML API som Tjänsteleverantörer anropar för att hämta kommunikationsoperatörens accesser. 
 
 Med "access" menas en unik avlämningspunkt, alltså en port på en access-switch som terminas i exempelvis en lägenhet.
 
-Eftersom det är fördelaktigt att kunna hålla Com Hem PI uppdaterat och "i synk" med kommunikationsoperatören om det aktuella beståndet sker uppdateringsfrågor frekvent. För att detta inte skall belasta KOs servrar inkluderar APIet en begränsningsmekanism.
+Eftersom det är fördelaktigt att kunna hålla TLs system uppdaterat och "i synk" med kommunikationsoperatören om det aktuella beståndet sker uppdateringsfrågor frekvent. För att detta inte skall belasta KOs servrar inkluderar APIet en begränsningsmekanism.
 
 ## Koncept
 ![Koncept](files/pi.png)
@@ -23,7 +23,7 @@ Eftersom det är fördelaktigt att kunna hålla Com Hem PI uppdaterat och "i syn
                 <code>AccessId</code>
             </td>
             <td>
-                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Com Hem förväntar sig att all kommunikation om en avlämningspunkt sker med samma AccessId. Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
+                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
             </td>
         </tr>
         <tr>
@@ -95,7 +95,7 @@ Eftersom det är fördelaktigt att kunna hålla Com Hem PI uppdaterat och "i syn
             </td>
             <td>
                 Lägenhetsnummer enligt Lantmäteriet. En av MduApartmentNumber, MduDistinguisher måste finnas om PremisesType är "MDU_APARTMENT". Exempel: 1101, 0901, 1201, 1213. <em>text, 4 digits, obligatoriskt*</em><br><br>
-                Fältet används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att Com Hem har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med MduApartmentNumber eller MduDistinguisher kan Com Hem fastställa exakt vilken access som skall aktiveras.
+                Fältet används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att TL har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med MduApartmentNumber eller MduDistinguisher kan TL fastställa exakt vilken access som skall aktiveras.
             </td>
         </tr>
         <tr>
@@ -157,7 +157,7 @@ Eftersom det är fördelaktigt att kunna hålla Com Hem PI uppdaterat och "i syn
                 <code>Option82</code>
             </td>
             <td>
-                Fältet används av Com Hem för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. <em>text, obligatoriskt</em><br>
+                Fältet används av TL för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. <em>text, obligatoriskt</em><br>
                 <br/>
                 Exempel: "192.168.248.85 ge-0/0/10"<br/>
             </td>
@@ -220,7 +220,7 @@ PI stöder autentisering via HTTP BASIC. Se [RFC-2617][rfc2617]. När ett icke-t
 
 ## Begränsningsmekanism
 
-Efter första lyckade anropet kommer anropen att begränsas, på så vis att Com Hem PI bara efterfrågar accesser som förändrats.
+Efter första lyckade anropet kommer anropen att begränsas, på så vis efterfrågas enbart accesser som förändrats.
 Detta sker med HTTP-headern "If-Modified-Since", se [RFC-2616][rfc2616-sec14]. Exemplen använder ingen autentisering.
 
 ```
@@ -229,7 +229,7 @@ If-Modified-Since = "If-Modified-Since" ":" HTTP-date
 
 ## Begränsningsmekanism - Exempel
 
-Vid första anropet sker ingen begränsning. Då ber Com Hem PI om fullständiga beståndet.
+Vid första anropet sker ingen begränsning. Då ber Tjänsteleverantör om fullständiga beståndet.
 
 Request:
 ```http
@@ -244,7 +244,7 @@ Content-Type: application/xml
 ...
 ```
 
-Vid påföljande anrop skickar Com Hem PI med "If-Modified-Since"-header för att bara be om uppdaterade poster.
+Vid påföljande anrop skickar Tjänsteleverantör med "If-Modified-Since"-header för att bara be om uppdaterade poster.
 
 Request:
 ```http

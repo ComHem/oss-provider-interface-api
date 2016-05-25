@@ -1,10 +1,10 @@
 # Option82 Lookup API
 
-För att stöda utrustningsbaserad autoaktivering behöver Com Hem kunna slå upp vilken Access ett Option82-värde avser.
+För att stöda utrustningsbaserad autoaktivering behöver Tjänsteleverantör kunna slå upp vilken Access ett Option82-värde avser.
 
-På olika sätt får Com Hem in DHCP-loggar med MAC-adress och Option82 (port). På så vis kan Com Hem avgöra vilken port en kund är inkopplad i. För att kunna fortsätta aktiveringsprocessen och beställa tjänster på rätt port (via Access) behöver Com Hem kunna avgöra vilket AccessId som hör till en given port.
+Tjänsteleverantör samlar in DHCP-loggar med MAC-adress och Option82 (port). På så vis kan TL avgöra vilken port en kund är inkopplad i. För att kunna fortsätta aktiveringsprocessen och beställa tjänster på rätt port (via Access) behöver TL kunna avgöra vilket AccessId som hör till en given port.
 
-Beroende på hur stadsnätet förmedlar loggar till Com Hem kommer Com Hem att skicka anrop med olika suboptions.
+Beroende på hur stadsnätet förmedlar loggar till Tjänsteleverantör kommer TL att skicka anrop med olika suboptions.
 
 Om DHCP-loggen enbart innehåller RemoteId, kommer anropet enbart innehålla RemoteId, och vice versa.
 

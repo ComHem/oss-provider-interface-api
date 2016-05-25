@@ -1,6 +1,6 @@
 # Feasibility Bulk + Incremental
 
-Com Hem använder Feasibility API för att beskriva vilka accesser/adresser som är säljbara och vilka tjänster som är tekniskt genomförbara. 
+Feasibility API utgör källdatan som Tjänsteleverantör använder för att beskriva vilka accesser/adresser som är säljbara och vilka tjänster som är tekniskt genomförbara. 
 
 ## Exempel
 
@@ -81,10 +81,10 @@ Content-Type: application/json
 ]
 ```
 
-* Kund har BB-100-10 via Com Hem. Tjänsten är tillgänglig/ledig (för Com Hem). Bredband blir tillgängligt fr.o.m. 2013-10-12.
-* Kund har IPTV via Com Hem. Tjänsten är tillgänglig. Tillgängligt fr.o.m. 2013-10-12 (samma som BB)
+* Kund har BB-100-10 via frågande TL. Tjänsten är tillgänglig/ledig för TL. Bredband blir tillgängligt fr.o.m. 2013-10-12.
+* Kund har IPTV via TL. Tjänsten är tillgänglig. Tillgängligt fr.o.m. 2013-10-12 (samma som BB)
 * BB-10-10 kopplas in 2013-10-12.
-* Kund har även VOIP, men inte via Com Hem så det är inte tillgängligt. Kopplades in (tekniskt) 2013-08-13.
+* Kund har även VOIP, men inte via frågande TL så det är inte tillgängligt. Kopplades in (tekniskt) 2013-08-13.
 * Accessen stödjer BB-100-100 vid senare tidpunkt som övriga tjänster. Tjänsten är tillgänglig fr.o.m. 2014-03-01 (exempelvis p.g.a. en teknisk uppgradering av nätet).
 * BB-100-100 behöver patchas om till en ny access-switch. Vid beställning tar det 10 dagar av KO.
 * Om KO inte känner till bindningstider utan bara vill indikera att en tjänst är "upptagen" skall Available = NO.
@@ -106,7 +106,7 @@ Content-Type: application/json
                 <code>accessId</code>
             </td>
             <td>
-                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Com Hem förväntar sig att all kommunikation om en avlämningspunkt sker med samma AccessId. Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
+                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
             </td>
         </tr>
         <tr>
@@ -178,7 +178,7 @@ Content-Type: application/json
                 <code>mduApartmentNumber</code>
             </td>
             <td>
-								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att Com Hem har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber eller mduDistinguisher kan Com Hem fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
+								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att TL har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber eller mduDistinguisher kan TL fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
 								<br>
 								Exempel: 1101, 0901, 1201, 1213.<br>
 								<br>
@@ -262,7 +262,7 @@ Content-Type: application/json
             </td>
             <td>
                 Anger om flaggan "force" i en beställning kommer att ha effekt.<br>
-                Alltså, är det möjligt att använda "force" (Forced Takeover) för att KO skall börja leverera Com Hems tjänst istället för annan SPs tjänst. <br>
+                Alltså, är det möjligt att använda "force" (Forced Takeover) för att KO skall börja leverera anropande TLs tjänst istället för annan TLs tjänst. <br>
                 Om Forced Takeover inte stöds skall <b>false</b> returneras.<br>
                 <em>true eller false, obligatoriskt</em>
             </td>
@@ -290,7 +290,7 @@ Content-Type: application/json
                 <code>active / option82</code>
             </td>
             <td>
-                Fältet används av Com Hem för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. Se <em>text, obligatoriskt</em><br>
+                Fältet används för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. Se <em>text, obligatoriskt</em><br>
                 <a href="#option82">Option82 format</a>
                 <br>
                 Exempel: "5216010765746820302F31020B31302E31302E31302E3130"<br/>
@@ -301,7 +301,7 @@ Content-Type: application/json
                 <code>active / equipment</code>
             </td>
             <td>
-                Lista av utrustning som Com Hem angett för tjänsten.<br>
+                Lista av utrustning som TL angett för tjänsten.<br>
                 Se <a href="service_activation.md">Service Activation</a> för mer information.
             </td>
         </tr>
@@ -334,9 +334,9 @@ Content-Type: application/json
 
 ## Begränsningsmekanism
 
-Com Hem använder If-Modified-Since för att be om inkrementella uppdateringar av accesser. På det viset kan anropet ske ofta men fortfarande vara billigt.
+If-Modified-Since används för att be om inkrementella uppdateringar av accesser. På det viset kan anropet ske ofta men fortfarande vara billigt.
 
-Vid första anropet sker ingen begränsning. Då ber Com Hem PI om fullständiga beståndet. Vid påföljande anrop används If-Modified-Since. Värdet för headern är föregående svars värde på Last-Modified.
+Vid första anropet sker ingen begränsning. Det innebär att TL ber om fullständiga beståndet. Vid påföljande anrop används If-Modified-Since. Värdet för headern är föregående svars värde på Last-Modified.
 
 Av den anledningen är "Last-Modified" obligatoriskt vid HTTP Status 200.
 
@@ -363,7 +363,7 @@ Content-Type: application/json
 ...
 ```
 
-Vid påföljande anrop skickar Com Hem PI med "If-Modified-Since"-header för att bara be om uppdaterade poster.
+Vid påföljande anrop skall TL skicka med "If-Modified-Since"-header för att bara be om uppdaterade poster.
 
 Request:
 ```http

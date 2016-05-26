@@ -1,6 +1,6 @@
 # Feasibility API
 
-Com Hem använder Feasibility API för att kunna hitta avlämningspunkter och svara på om en fastighet/lägenhet är inkopplad i ett nät. Com Hem ser även vilken teknisk kapacitet varje access har genom de tekniska tjänster som är definierade på accessen.
+Feasibility API används av Tjänsteleverantör för att kunna hitta avlämningspunkter och svara på om en fastighet/lägenhet är inkopplad i ett nät. Tjänsteleverantör ser även vilken teknisk kapacitet varje access har genom de tekniska tjänster som är definierade på accessen.
 
 ## Exempel
 
@@ -69,7 +69,7 @@ Content-Type: application/json
                 <code>accessId</code>
             </td>
             <td>
-                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Com Hem förväntar sig att all kommunikation om en avlämningspunkt sker med samma AccessId. Får enbart bestå av tecknen a-z, A-Z, 0-9, '-' och '.'. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9-.]+</em>
+                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Får enbart bestå av tecknen a-z, A-Z, 0-9, '-' och '.'. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9-.]+</em>
             </td>
         </tr>
         <tr>
@@ -141,7 +141,7 @@ Content-Type: application/json
                 <code>mduApartmentNumber</code>
             </td>
             <td>
-								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att Com Hem har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber eller mduDistinguisher kan Com Hem fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
+								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att TL har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber eller mduDistinguisher kan TL fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
 								<br>
 								Exempel: 1101, 0901, 1201, 1213.<br>
 								<br>
@@ -235,9 +235,9 @@ Content-Type: application/json
 
 ## Begränsningsmekanism
 
-Com Hem använder If-Modified-Since för att be om inkrementella uppdateringar av accesser. På det viset kan anropet ske ofta men fortfarande vara billigt.
+If-Modified-Since används för att be om inkrementella uppdateringar av accesser. På det viset kan anropet ske ofta men fortfarande vara billigt.
 
-Vid första anropet sker ingen begränsning. Då ber Com Hem PI om fullständiga beståndet. Vid påföljande anrop används If-Modified-Since. Värdet för headern är föregående svars värde på Last-Modified.
+Vid första anropet sker ingen begränsning. Då ber TL om fullständiga beståndet. Vid påföljande anrop används If-Modified-Since. Värdet för headern är föregående svars värde på Last-Modified.
 
 Av den anledningen är "Last-Modified" obligatoriskt vid HTTP Status 200.
 
@@ -266,7 +266,7 @@ Content-Type: application/json
 ...
 ```
 
-Vid påföljande anrop skickar Com Hem PI med "If-Modified-Since"-header för att bara be om uppdaterade poster.
+Vid påföljande anrop skickas "If-Modified-Since"-header för att bara be om uppdaterade poster.
 
 Request:
 ```http

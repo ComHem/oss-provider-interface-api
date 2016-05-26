@@ -38,5 +38,5 @@ Ett nytt API, som del av Service Activation API, ger möjlighet att fråga om Or
 
 ### API för uppslag av AccessID för givet Option82
 
-För att stöda utrustningsbaserad autoaktivering behöver Com Hem kunna slå upp vilket AccessID ett Option82 avser.
+För att stöda utrustningsbaserad autoaktivering behöver TL kunna slå upp vilket AccessID ett Option82 avser.
 

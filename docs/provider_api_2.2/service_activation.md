@@ -95,7 +95,7 @@ Content-Type: application/json
                 <code>accessId</code>
             </td>
             <td>
-                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Com Hem förväntar sig att all kommunikation om en avlämningspunkt sker med samma AccessId. Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
+                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
             </td>
         </tr>
         <tr>
@@ -121,7 +121,7 @@ Content-Type: application/json
                 <code>forcedTakeover</code>
             </td>
             <td>
-                Anger om Com Hems beställning skall ersätta annan Service Providers aktiva tjänster. Det behöver enbart fungera om Feasibility indikerat att funktionen skall fungera. Det gäller enbart för ACTIVATE-ordrar. Skall inte skickas vid DEACTIVATE. <br>Stöd för forcedTakeover är inte obligatoriskt, men i de fall det inte stöds skall tjänsten ändå kunna ta emot en fullständig beställning med "forcedTakeover: false".
+                Anger om anropande TLs beställning skall ersätta annan Service Providers aktiva tjänster. Det behöver enbart fungera om Feasibility indikerat att funktionen skall fungera. Det gäller enbart för ACTIVATE-ordrar. Skall inte skickas vid DEACTIVATE. <br>Stöd för forcedTakeover är inte obligatoriskt, men i de fall det inte stöds skall tjänsten ändå kunna ta emot en fullständig beställning med "forcedTakeover: false".
                 <em>boolean (true/false), obligatoriskt för ACTIVATE</em>
             </td>
         </tr>
@@ -130,7 +130,7 @@ Content-Type: application/json
                 <code>customer</code>
             </td>
             <td>
-                Syftet med customer är att ge KO information om Com Hems slutkund.<br>
+                Syftet med customer är att ge KO information om Tjänsteleverantörens slutkund.<br>
                 JSON-strukturen är obligatorisk och kommer alltid skickas med, men samtliga attribut kan vara tomma.<br>
                 <em>Obligatoriskt vid ACTIVATE. Skall inte skickas med vid DEACTIVATE.</em>
             </td>
@@ -164,7 +164,7 @@ Content-Type: application/json
                 <code>deliveryAddress</code>
             </td>
             <td>
-                Syftet med deliveryAddres är att ge KO information om leveransadress för utrustning till en kund. Det behöver inte vara samma som leveransadressen för tjänsten. Com Hems slutkund.<br>
+                Syftet med deliveryAddres är att ge KO information om leveransadress för utrustning till en kund. Det behöver inte vara samma som leveransadressen för tjänsten.<br>
                 JSON-strukturen är obligatorisk och kommer alltid skickas med, men samtliga attribut kan vara tomma.<br>
                 <em>Obligatoriskt vid ACTIVATE. Skall inte skickas med vid DEACTIVATE.</em>
             </td>
@@ -184,7 +184,7 @@ Content-Type: application/json
             <td>
                 Equipment innehåller en lista över den utrustning som kan användas för att avgöra vilken tjänst/KO en tjänst tillhör hos kunden.<br>
                 <br>
-                Ett use-case är vid Single-Play-Telefoni, där Com Hem använder RGWn för enbart Telefoni. Då behöver KO kunna avgöra att VendorId CH_BROADBAND skall användas för Telefoni istället för bredband.<br>
+                Ett use-case är vid Single-Play-Telefoni, där en TL använder en trådlös router för enbart Telefoni. Då behöver KO kunna avgöra att VendorId CH_BROADBAND skall användas för Telefoni istället för bredband.<br>
                 <br>
                 Listan är per tjänst, och den fullständiga listan skall alltid skickas vid varje aktivering.<br>
                 <br>

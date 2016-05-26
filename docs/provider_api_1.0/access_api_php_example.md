@@ -1,9 +1,5 @@
 # Exempel i PHP
 
-Com Hem har tagit fram en PHP implementation av Access API.
-
-## PHP exempel
-
 ```php
 <?
 \$if_modified_since = strtotime(\$_SERVER['HTTP_IF_MODIFIED_SINCE']);

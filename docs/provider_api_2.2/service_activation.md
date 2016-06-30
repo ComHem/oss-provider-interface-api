@@ -11,6 +11,7 @@ Content-Type: application/json
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "ACTIVATE",
+    "provisioningType": "Start",
     "forcedTakeover": false,
     "customer": {
         "firstName": "Kalle",
@@ -114,6 +115,17 @@ Content-Type: application/json
             <td>
                Anger om tjänsten skall aktiveras, avaktiveras, suspenderas eller avsuspenderas.<br>
                Giltiga värden: "ACTIVATE", "DEACTIVATE", "SUSPEND", "UNSUSPEND". <em>text, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>provisioningType</code>
+            </td>
+            <td>
+               Anger vilken typ av affärsregler KOs system ska tillämpa (t.ex. för startavgifter).<br>
+               Giltiga värden: "Default", "Upgrade", "Downgrade", "Package", "Test". <br/>
+               Default eller tom sträng är normalfall. Upgrade och downgrade anges om tjänsten ska hanteras som en uppgradering eller nedgradering (KOs system har ansvar att se om detta är tillåtet). "Package" anger att detta ska hanteras som en del av ett paket (KOs system har ansvar att se om detta kan stämma). "Test" används då en ISP vill lägga på en tjänst för att temporärt testa en kunds anslutning och ska normalt inte ha med någon startavgift eller liknande (ansvar för borttagning av temporära tjänster ligger på tjänsteleverantören). 
+               <em>text</em>
             </td>
         </tr>
         <tr>

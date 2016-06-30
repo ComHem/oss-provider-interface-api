@@ -29,6 +29,7 @@ Content-Type: application/json
     "mduDistinguisher": "12121212",
     "outlet": "A-11-14",
     "population": "Hemsöhem",
+    "cadastral": "Hemsö 123",
     "services": [
         {
             "service": "BB-100-100",

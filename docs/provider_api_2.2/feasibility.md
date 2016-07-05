@@ -28,6 +28,7 @@ Content-Type: application/json
         "mduDistinguisher": "12121212",
         "outlet": "A-11-14",
         "population": "Hemsöhem",
+        "cadastral": "Hemsö 123",
         "services": [
             {
                 "service": "BB-100-100",
@@ -174,6 +175,14 @@ Content-Type: application/json
             </td>
             <td>
                 Anger delbestånd i hela beståndet. Hela beståndet hämtas alltid in, men det kan filtreras och göras säljbart i olika etapper. <em>text</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>cadastral</code>
+            </td>
+            <td>
+                Anger fastighetsbeteckning. <em>text</em>
             </td>
         </tr>
         <tr>

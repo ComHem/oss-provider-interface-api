@@ -13,6 +13,7 @@ Content-Type: application/json
     "operation": "ACTIVATE",
     "provisioningType": "Start",
     "forcedTakeover": false,
+    "billingId" : "ank22958",
     "customer": {
         "firstName": "Kalle",
         "lastName": "Anka",
@@ -135,6 +136,14 @@ Content-Type: application/json
             <td>
                 Anger om Com Hems beställning skall ersätta annan Service Providers aktiva tjänster. Det behöver enbart fungera om Feasibility indikerat att funktionen skall fungera. Det gäller enbart för ACTIVATE-ordrar. Skall inte skickas vid DEACTIVATE. <br>Stöd för forcedTakeover är inte obligatoriskt, men i de fall det inte stöds skall tjänsten ändå kunna ta emot en fullständig beställning med "forcedTakeover: false".
                 <em>boolean (true/false), obligatoriskt för ACTIVATE</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>billingId</code>
+            </td>
+            <td>
+                Id för tjänsten, för spårbarhet mot kundid/kundnummer i Service Providers system. Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, max 32 tecken, [a-zA-Z0-9]+</em>
             </td>
         </tr>
         <tr>

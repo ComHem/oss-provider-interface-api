@@ -55,7 +55,7 @@ Content-Type: application/json
 }
 ```
 
-Svaret skickas som concatenated JSON ([Wikipedia][https://en.wikipedia.org/wiki/JSON_Streaming#Concatenated_JSON]).
+Svaret skickas som concatenated JSON [Wikipedia](https://en.wikipedia.org/wiki/JSON_Streaming#Concatenated_JSON]).
 ("Concatenated JSON" omfattar även "Line delimited JSON")
 
 ## Fältbeskrivningar
@@ -255,9 +255,8 @@ Svaret skickas som concatenated JSON ([Wikipedia][https://en.wikipedia.org/wiki/
        </tbody>
 </table>
 
-
-1) StreetNumber eller 
-2) Vid PremisesType MDU_APARTMENT och PremisesType MDU_COMMON måste en av MduDistinguisher eller MduApartmentNumber vara populerade.
+1. StreetNumber eller 
+2. Vid PremisesType MDU_APARTMENT och PremisesType MDU_COMMON måste en av MduDistinguisher eller MduApartmentNumber vara populerade.
 
 ## Begränsningsmekanism
 

@@ -45,6 +45,7 @@ Content-Type: application/json
     "coFiberConverter": "LASER_3001X_MK2",
     "coCpeSwitch": "",
     "coCpeRouter": "NETGEAR WNDR4000",
+    "media": "FTTB",
     "fastighetsbeteckning": {
         "kommun": "Mullsjö",
         "trakt": "Skoga",
@@ -196,6 +197,15 @@ Svaret skickas som [Concatenated JSON][wikipedia-concatenated-json]. "Concatenat
             </td>
             <td>
                 Om CPEn är en Router, är detta typen (tillverkare, modell) som är inkopplad. Enbart en av CpeSwitch och CpeRouter får finnas. Skall enbart användas för utrustning som KO tillhandahåller. <em>text</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>media</code>
+            </td>
+            <td>
+                Anger media som används för att ansluta accessen efter distributionsswitchen.<br>
+                <em>text, obligatorisk, en av FTTB, FTTH, WLL och XDSL</em>
             </td>
         </tr>
         <tr>

@@ -225,7 +225,15 @@ Svaret skickas som concatenated JSON [Wikipedia](https://en.wikipedia.org/wiki/J
             </td>
             <td>
                 Fastighetsbeteckning för avlämningspunktens fastighet.<br>
-                Exempel: "Mullsjö Skoga 1:54"   <em>obligatoriskt</em>
+                Exempel: "Mullsjö Skoga 1:54" representeras som:<br>
+                <code>
+                {
+                	"kommun": "Mullsjö",
+                	"trakt": "Skoga",
+                	"block": "1:54"
+                }
+                </code>
+                <em>obligatoriskt</em>
             </td>
         </tr>
         <tr>
@@ -252,6 +260,13 @@ Svaret skickas som concatenated JSON [Wikipedia](https://en.wikipedia.org/wiki/J
                 Fastighetsbeteckningens block. Exempel: "1:54".<em>Text, obligatoriskt. Tecken 0-9 samt : (kolon).</em>
             </td>
         </tr>
+        <tr>
+        	<td><code>urkoppling</code></td>
+        	<td>
+        		Anger när (om) accessen kopplas ur. Sista datum som tjänster är aktiva.<br>
+        		"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt<br>
+			Exempel: YES, NO, 2012-07-01 
+		</td>
        </tbody>
 </table>
 

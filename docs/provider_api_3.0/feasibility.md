@@ -20,7 +20,6 @@ Content-Type: application/json
     "streetNumber": "100A",
     "postalCode": "10000",
     "city": "Ankeborg",
-    "premisesType": "MDU_APARTMENT",
     "mduApartmentNumber": "1001",
     "mduDistinguisher": "12121212",
     "outlet": "A-11-14",
@@ -110,30 +109,12 @@ Svaret skickas som [Concatenated JSON][wikipedia-concatenated-json]. "Concatenat
         </tr>
         <tr>
             <td>
-                <code>premisesType</code>
-            </td>
-            <td>
-                PremisesType beskriver avlämningspunktens lokal. <sup>2</sup><em>obligatoriskt</em>
-<dl>
-<dt>MDU_APARTMENT</dt><dd>Lägenhet i flerbostadshus. Delad fastighetsbeteckning.</dd>
-<dt>MDU_COMMON</dt><dd>Gemensamt utrymme i flerbostadshus. Delad fastighetsbeteckning.</dd>
-<dt>RESIDENTIAL_HOUSE</dt><dd>Bostad som har egen fastighetsbeteckning.</dd>
-<dt>COMMERCIAL</dt><dd>Lokal, men utan tillträde från allmänheten. Till exempel ett kontor.</dd>
-<dt>PUBLIC</dt><dd>Inrättning dit allmänheten har tillträde. Till exempel en restaurang eller ett gym.</dd>
-<dt>UNKNOWN</dt><dd>Okänd.</dd>
-</dl>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <code>mduApartmentNumber</code>
             </td>
             <td>
-								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att TL har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber eller mduDistinguisher kan TL fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>2</sup></em><br>
-								<br>
-								Exempel: 1101, 0901, 1201, 1213.<br>
-								<br>
-                [1] En av <code>mduApartmentNumber</code>, <code>mduDistinguisher</code> måste finnas om <code>premisesType</code> är <code>"MDU_APARTMENT"</code>.
+		Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att TL har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber eller mduDistinguisher kan TL fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
+		<br>
+		Exempel: 1101, 0901, 1201, 1213.<br>
             </td>
         </tr>
         <tr>
@@ -141,19 +122,18 @@ Svaret skickas som [Concatenated JSON][wikipedia-concatenated-json]. "Concatenat
                 <code>mduDistinguisher</code>
             </td>
             <td>
-                Alternativ lokalbeteckning som identifierar lägenheten unikt per adress. Behöver inte följa Lantmäteriets format. <em>text, obligatoriskt<sup>2</sup></em><br>
-								<br>
-								Exempel: 28, 65113, 1234-1919.<br>
-								<br>
-	              [2] En av <code>mduApartmentNumber</code>, <code>mduDistinguisher</code> måste finnas om <code>premisesType</code> är <code>"MDU_APARTMENT"</code>.
-            </td>
+                Alternativ lokalbeteckning som identifierar lägenheten unikt per adress. Behöver inte följa Lantmäteriets format. <em>text, obligatoriskt<sup>1</sup></em><br>
+		<br>
+		Exempel: 28, 65113, 1234-1919.
+    		</td>
         </tr>
         <tr>
             <td>
                 <code>outlet</code>
             </td>
             <td>
-                Uttagsnummer som identifierar porten i lägenhet/villa. Typiskt är porten hos slutkund märkt med uttagsnummer. Outlet behöver vara unikt per adress. <em>text</em>
+                Uttagsnummer som identifierar porten i lägenhet/villa. Typiskt är porten hos slutkund märkt med uttagsnummer.<br>
+                Outlet behöver vara unikt per adress. <em>text</em>
             </td>
         </tr>
         <tr>
@@ -269,8 +249,7 @@ Svaret skickas som [Concatenated JSON][wikipedia-concatenated-json]. "Concatenat
        </tbody>
 </table>
 
-1. StreetNumber eller 
-2. Vid PremisesType MDU_APARTMENT och PremisesType MDU_COMMON måste en av MduDistinguisher eller MduApartmentNumber vara populerade.
+1. När flera avlämningspunkter finns på samma adress (streetName, streetNumber, postnummer) behöver de kunna särskiljas med hjälp av mduApartmentNumber eller mduApartmentNumber.
 
 ## Begränsningsmekanism
 

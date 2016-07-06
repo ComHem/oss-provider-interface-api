@@ -55,8 +55,7 @@ Content-Type: application/json
 }
 ```
 
-Svaret skickas som concatenated JSON [Wikipedia](https://en.wikipedia.org/wiki/JSON_Streaming#Concatenated_JSON]).
-("Concatenated JSON" omfattar även "Line delimited JSON")
+Svaret skickas som [Concatenated JSON][wikipedia-concatenated-json]. "Concatenated JSON" omfattar "Line delimited JSON".
 
 ## Fältbeskrivningar
 
@@ -333,3 +332,4 @@ HTTP/1.1 304 Not Modified
 ```
 
 [rfc2616-sec14]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html "HTTP/1.1 RFC-2616 Section 14, Header Field Definitions"
+[wikipedia-concatenated-json]: https://en.wikipedia.org/wiki/JSON_Streaming#Concatenated_JSON]

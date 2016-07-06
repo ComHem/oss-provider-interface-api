@@ -263,8 +263,8 @@ Svaret skickas som [Concatenated JSON][wikipedia-concatenated-json]. "Concatenat
         	<td><code>urkoppling</code></td>
         	<td>
         		Anger när (om) accessen kopplas ur. Sista datum som tjänster är aktiva.<br>
-        		"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt<br>
-			Exempel: YES, NO, 2012-07-01 
+        		"" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt<br>
+			Exempel: "", "2012-07-01"
 		</td>
        </tbody>
 </table>

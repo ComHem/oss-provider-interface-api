@@ -14,14 +14,13 @@ Innehåller operationer med följande syften:
 
 1. [Ändringar mot tidigare versioner](changelog.md)
 2. [Feasibility API](feasibility.md)
-3. [Availability API](availability.md)
+3. [Access & Activation API](access.md)
 4. [Service Activation API](service_activation.md)
 5. [Order Events API](order_events.md)
-6. [Option82 Lookup API](option82_lookup.md)
-7. [FM Link Status API](fm_linkstatus.md)
-8. [Option82](option82.md)
-9. [Trouble Tickets](tt.md)
-10. [Övergripande](misc.md)
+6. [FM Link Status API](fm_linkstatus.md)
+7. [Option82](option82.md)
+8. [Trouble Tickets](tt.md)
+9. [Övergripande](misc.md)
 
 ## Terminologi
 

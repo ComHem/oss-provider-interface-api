@@ -1,8 +1,11 @@
-# Availability API
+# Access & Activation API
 
-Availability ger samma information som Feasibility-API, men enbart för en access.
-Dessutom svarar det med information som kan vara kostsammare att producera och av naturen behöver vara aktuell.
-Typiskt används frågan för att kunna svara kund om vilka tekniska tjänster som är lediga, med hänsyn taget till andra tjänsteleverantörer.
+Access & Activation API erbjuder möjligheten att i realtid hämta följande information:
+* Vilka tekniska tjänster som är Tillgängliga för TL att beställa.
+* Vilka tekniska tjänster TL har beställt (önskat Access-State).
+* Vilka tekniska tjänster som för närvarande är aktiva på accessen (faktiskt Access-State).
+* Förklaring till varför det är skillnader mellan Önskat och Faktiskt Access-State.
+* Uppslag mellan Port-representationerna (AccessID och SwitchPort/O82).
 
 ### Exempel
 

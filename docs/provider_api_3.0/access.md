@@ -11,7 +11,11 @@ Access & Activation API erbjuder möjligheten att i realtid hämta följande inf
 
 Request:
 ```http
-GET /api/2.2/accesses/STTA0001 HTTP/1.1
+GET /api/3.0/accesses/accessid/STTA0001 HTTP/1.1
+```
+eller
+```http
+GET /api/3.0/accesses/accessport/5216010765746820302F31020B31302E31302E31302E3130 HTTP/1.1
 ```
 
 Response:
@@ -21,61 +25,80 @@ Content-Type: application/json
 
 {
     "accessId": "STTA0001",
-    "streetName": "Testvägen",
-    "streetNumber": "100",
-    "streetLittera": "",
-    "postalCode": "10000",
-    "city": "Ankeborg",
-    "countryCode": "SE",
-    "premisesType": "MDU_APARTMENT",
-    "mduApartmentNumber": "1001",
-    "mduDistinguisher": "12121212",
-    "outlet": "A-11-14",
-    "population": "Hemsöhem",
-    "services": [
-        {
-            "service": "BB-100-100",
-            "connection": "2014-03-01",
-            "available": "2014-01-01",
-            "forcedTakeoverPossible": false
-        }, {
-            "service": "BB-100-10",
-            "connection": "2013-10-12",
-            "available": "YES",
-            "forcedTakeoverPossible": false
-        }, {
-            "service": "BB-10-10",
-            "connection": "2013-10-12",
-            "available": "YES",
-            "forcedTakeoverPossible": false
-        }, {
-            "service": "IPTV",
-            "connection": "2013-10-12",
-            "available": "YES",
-            "forcedTakeoverPossible": false
-        }, {
-            "service": "VOIP",
-            "connection": "2013-08-13",
-            "available": "NO",
-            "forcedTakeoverPossible": true
+    "accessPort": "5216010765746820302F31020B31302E31302E31302E3130",
+    "feasibility": {
+        "streetName": "Testvägen",
+        "streetNumber": "100A",
+        "postalCode": "10000",
+        "city": "Ankeborg",
+        "mduApartmentNumber": "1001",
+        "mduDistinguisher": "12121212",
+        "outlet": "A-11-14",
+        "population": "Hemsöhem",
+        "services": [
+            {
+                "service": "BB-100-100",
+                "connection": "2014-03-01"
+            }, {
+                "service": "BB-100-10",
+                "connection": "2013-10-12"
+            }, {
+                "service": "BB-10-10",
+                "connection": "2013-10-12"
+            }, {
+                "service": "IPTV",
+                "connection": "2013-10-12"
+            }, {
+                "service": "VOIP",
+                "connection": "2013-08-13"
+            }
+        ],
+        "coFiberConverter": "LASER_3001X_MK2",
+        "coCpeSwitch": "",
+        "coCpeRouter": "NETGEAR WNDR4000"
+    }
+    "expectedState": [
+        { 
+            "service": "BB-1000-100" 
+            "customer": {
+                "name": "Kalle Anka",
+                "personnummer": "",
+                "email": "karl@ankeborg.se",
+                "phone": "",
+                "mobilePhone": ""
+            },
+            "deliveryAddress": {
+                "smsNotificationPhone": "",
+                "streetName": "Testvägen",
+                "streetNumber": 100A",
+                "postalCode": "10000",
+                "city": "Ankeborg"
+            }
         }
     ],
-    "active": [
-        {
-            "service": "BB-100-10",
-            "option82": "5216010765746820302F31020B31302E31302E31302E3130",
-            "equipment": [
-                { "vendorId" : "CH_BROADBAND" }
-            ]
-        }, {
-            "service": "IPTV",
-            "option82": "5216010765746820302F32020B31302E31302E31302E3130",
-            "equipment": []
+    "actualState": [
+        { 
+            "service": "BB-100-100" 
+            "customer": {
+                "name": "Kalle Anka",
+                "personnummer": "",
+                "email": "karl@ankeborg.se",
+                "phone": "",
+                "mobilePhone": ""
+            },
+            "deliveryAddress": {
+                "smsNotificationPhone": "",
+                "streetName": "Testvägen",
+                "streetNumber": 100A",
+                "postalCode": "10000",
+                "city": "Ankeborg"
+            }
         }
     ],
-    "coFiberConverter": "LASER_3001X_MK2",
-    "coCpeSwitch": "",
-    "coCpeRouter": "NETGEAR WNDR4000"
+    "mismatchCauses": [
+        { "type": "IN_PROGRESS", "cause": "" },
+        { "type": "OTHER", "cause": "Ny mediaomvandlare är beställd. Tills dess har kunden 100/100." }
+    ]
 }
 ```
 

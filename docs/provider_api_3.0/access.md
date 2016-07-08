@@ -56,7 +56,7 @@ Content-Type: application/json
         "coFiberConverter": "LASER_3001X_MK2",
         "coCpeSwitch": "",
         "coCpeRouter": "NETGEAR WNDR4000"
-    }
+    },
     "expectedState": [
         { 
             "service": "BB-1000-100" 
@@ -78,7 +78,7 @@ Content-Type: application/json
     ],
     "actualState": [
         { 
-            "service": "BB-100-100" 
+            "service": "BB-100-100",
             "customer": {
                 "name": "Kalle Anka",
                 "personnummer": "",

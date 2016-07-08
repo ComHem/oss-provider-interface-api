@@ -59,7 +59,7 @@ Content-Type: application/json
     },
     "expectedState": [
         { 
-            "service": "BB-1000-100" 
+            "service": "BB-1000-100",
             "customer": {
                 "name": "Kalle Anka",
                 "personnummer": "",

@@ -70,7 +70,7 @@ Content-Type: application/json
             "deliveryAddress": {
                 "smsNotificationPhone": "",
                 "streetName": "Testvägen",
-                "streetNumber": 100A",
+                "streetNumber": "100A",
                 "postalCode": "10000",
                 "city": "Ankeborg"
             }
@@ -89,7 +89,7 @@ Content-Type: application/json
             "deliveryAddress": {
                 "smsNotificationPhone": "",
                 "streetName": "Testvägen",
-                "streetNumber": 100A",
+                "streetNumber": "100A",
                 "postalCode": "10000",
                 "city": "Ankeborg"
             }

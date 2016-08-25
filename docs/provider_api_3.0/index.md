@@ -15,18 +15,17 @@ Innehåller operationer med följande syften:
 1. [Ändringar mot tidigare versioner](changelog.md)
 2. [Feasibility API](feasibility.md)
 3. [Access & Activation API](access.md)
-4. [Service Activation API](service_activation.md)
-5. [Order Events API](order_events.md)
-6. [FM Link Status API](fm_linkstatus.md)
-7. [Option82](option82.md)
-8. [Trouble Tickets](tt.md)
-9. [Övergripande](misc.md)
+4. [Order Events API](order_events.md)
+5. [FM Link Status API](fm_linkstatus.md)
+6. [Option82](option82.md)
+7. [Trouble Tickets](tt.md)
+8. [Övergripande](misc.md)
 
-## Terminologi
+## Definitioner
 
 ### Access
 
-En _Access_ definieras som en avlämningspunkt som måste aktiveras för att en slutkund skall få tjänst. Utgörs typiskt av en port i en access-switch, förbindelsen till och uttaget i bostaden.
+En _Access_ är en avlämningspunkt som är kopplad till en switchport i en access-switch. Accesser stöder flera tekniska tjänster, som kan aktiverar och avaktiveras av TL. En access utgörs typiskt av en port i en access-switch, förbindelsen till och uttaget i bostaden.
 
 ### Feasibility
 

@@ -125,88 +125,71 @@ Content-Type: application/json
         </tr>
         <tr>
             <td>
-                <code>services / service</code>
+                <code>realisedState, requestedState</code>
             </td>
             <td>
-                Id/namn på teknisk tjänst som avses. Den tekniska tjänsten kan beställas via Service Activation API. <em>obligatorisk</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>services / connection</code>
-            </td>
-            <td>
-                Anger när accessen kopplas in och den tekniska tjänsten blir aktiverbar första gången. På det angivna datumet, eller om connection är "YES", skall det gå att aktivera tjänster på accessen. <br/>
-                Om tjänsten är aktiverbar men datumet är okänt kan "YES" användas för att indikera det. Datumet får tidigast vara 1970-01-01.<br/>
-                <br/>
-                <em>"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br/>
-                Exempel: YES, NO, 2012-07-01
+                `realisedState` och `requestedState` har samma struktur och format.<br>
+                `realisedState` är faktiskt access-state hos KO nu.<br>
+                `requestedState` är state som anropande TL beställt av KO.<br>
+                Om `realisedState` och `requestedState` skiljer sig får inte `mismatchCauses` vara tom.<br>
+                <em>obligatorisk</em>
             </td>
         </tr>
         <tr>
             <td>
-                <code>services / available</code>
+                <code>realisedState, requestedState / service</code>
             </td>
             <td>
-                Anger om/när teknisk tjänst är/blir tillgänglig för beställning och leverans.<br/>
-                Om tjänsten inte är tillgänglig för beställning av anropande TL skall det indikeras med "NO" eller datum då tjänsten blir tillgänglig.
-                <br/> Datumet får tidigast vara 1970-01-01.<br/>
-                <br/>
-                Innan tjänsten är tillgänglig första gången sammanfaller Available och Connection.<br/>
-                <br/>
-                <em>"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br/>
-                Exempel: YES, NO, 2012-07-01<br>
-                Exempel: Anropande TL har BB 10/10 aktivt. BB 10/10, BB 100/100 kan beställas om BB 10/10 först avaktiveras. KO skall svara med available YES.<br>
-                Exempel: Annan TL har BB 10/10 aktivt. BB 10/10, 100/100 skall svara med NO eller datum.
+                Syftar på en teknisk tjänst i Feasibility. <em>obligatorisk</em>
             </td>
         </tr>
         <tr>
             <td>
-                <code>services / forcedTakeoverPossible</code>
+                <code>realisedState, requestedState / suspended</code>
             </td>
             <td>
-                Anger om flaggan "force" i en beställning kommer att ha effekt.<br>
-                Alltså, är det möjligt att använda "force" (Forced Takeover) för att KO skall börja leverera anropande TLs tjänst istället för annan TLs tjänst. <br>
-                Om Forced Takeover inte stöds skall <b>false</b> returneras.<br>
-                <em>true eller false, obligatoriskt</em>
+                Anger om tjänsten är aktiv/beställd med blockerad av KO. Exempel på användning är när kund inte betalt räkning till TL. Då kan TL begära att tjänsten suspenderas.<br>
+                Giltiga värden: "NOT_SUSPENDED", "SUSPENDED". <em>obligatorisk</em><br>
             </td>
         </tr>
         <tr>
             <td>
-                <code>active</code>
+                <code>realisedState, requestedState / customer</code>
             </td>
             <td>
-                Lista över de tjänster som är aktiva på accessen för inloggad TL. <em>obligatorisk</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>active / service</code>
-            </td>
-            <td>
-                Service-namn på den aktiva tjänsten. Skall finnas i "services"-listan. <em>text, obligatoriskt</em><br>
-                <br>
-                Exempel: "BB-100-10"
+                
             </td>
         </tr>
         <tr>
             <td>
-                <code>active / option82</code>
+                <code>realisedState, requestedState / deliveryAddress</code>
             </td>
             <td>
-                Fältet används av tjänsteleverantör för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. Se <em>text, obligatoriskt</em><br>
-                <a href="option82.md">Option82 format</a>
-                <br>
-                Exempel: "5216010765746820302F31020B31302E31302E31302E3130"<br/>
+                
             </td>
         </tr>
         <tr>
             <td>
-                <code>active / equipment</code>
+                <code>mismatchCauses</code>
             </td>
             <td>
-                Lista av utrustning som tjänsteleverantör angett för tjänsten.<br>
-                Se <a href="service_activation.md">Service Activation</a> för mer information.
+            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>mismatchCauses / type</code>
+            </td>
+            <td>
+            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>mismatchCauses / cause</code>
+            </td>
+            <td>
+            
             </td>
         </tr>
     </tbody>

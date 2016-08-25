@@ -14,6 +14,7 @@
   På så vis används streetNumber för gatunummer och gatubokstav "10A" likaväl som vid metertalsadresser: "100-30".
 * "Service Activation API" är utbytt till ett State-baserat API. "Access & Activation API".
 * "Availability API", "Service Activation API" och "Option82 Lookup API" är hopslaget med "Access & Activation API".
+* "Order Events API" är utbytt till "Access Event API" och är en grundläggande del i nya "Access & Activation API".
 * Stöd för Suspend av slutkunds tjänster.
 
 ## Nytt i API 2.2.3

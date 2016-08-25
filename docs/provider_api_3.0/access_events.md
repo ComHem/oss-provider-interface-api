@@ -1,4 +1,4 @@
-# Order Events API
+# Access Events API
 
 Vid orderläggning i API 2.1 kan kommunikationsoperatören svara med state `RECEIVED`. Det betyder att tjänsteleverantören skall fråga regelbundet om ordern status.
 

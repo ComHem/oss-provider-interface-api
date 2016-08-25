@@ -11,11 +11,11 @@ Access & Activation API erbjuder möjligheten att i realtid hämta följande inf
 
 Request:
 ```http
-GET /api/3.0/accesses/accessid/STTA0001 HTTP/1.1
+GET /api/3.0/access/STTA0001 HTTP/1.1
 ```
 eller
 ```http
-GET /api/3.0/accesses/accessport/5216010765746820302F31020B31302E31302E31302E3130 HTTP/1.1
+GET /api/3.0/port/5216010765746820302F31020B31302E31302E31302E3130 HTTP/1.1
 ```
 
 Response:

@@ -4,7 +4,8 @@ Syftet med "Code Activation API" är att erbjuda Tjänsteleverantörer att autom
 
 KO erbjuder kund möjlighet att navigera till TLs kodaktiveringsportal och skickar med en token som TL kan använda för att hämta (för aktiveringen) nödvändig information.
 
-Flöde:
+## Flöde:
+
 1. Kund kopplar in en dator i mediaomvandlaren i sitt hem.
 2. Kund försöker surfa och kommer till KOs portal (eftersom kund inte har någon bredbandstjänst).
 3. KO erbjuder kunden möjlighet att köpa tjänster, eller att aktivera redan köpta tjänster hos Tjänsteleverantörer.

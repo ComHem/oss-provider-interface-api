@@ -1,49 +1,28 @@
 # Access Events API
 
-Vid orderläggning i API 2.1 kan kommunikationsoperatören svara med state `RECEIVED`. Det betyder att tjänsteleverantören skall fråga regelbundet om ordern status.
+För att TL skall kunna följa uppdateringar och förändringar av accesser (och beställningar på accesser) har "Access Events API" tagits fram. Efter förändring av Access-resursen i <a href="access.md">Access & Activation API</a>) skall det skapas ett nytt event i Access Events API.
 
-Order Event API erbjuder möjlighet att fråga om alla nya Order Event sedan senaste anrop. Så att Tjänsteleverantören kan ställa en fråga för status på alla utestående ordrar. På det viset kan intervallet mellan statushämtningar minskas och kunden får sina tjänster aktiverade snabbare.
-
-API:et används enbart då en orderläggning resulterar i state `RECEIVED`.
-
-Fälten beskrivs i <a href="service_activation.md">Service Activation API</a>.
+Access Events API är byggt för att vara enkelt att prenumerera på och hämta alla events som inträffat sen sist. På så vis undviker KO och TL att behöva stödja pollning på ordrar, order-status eller accesser.
 
 ## Exempel: Hämtning av nya events
 
 Request:
 ```http
-GET /api/3.0/orderevents/?since=cc537e54-e59c-11e3-a593-3c970e806452 HTTP/1.1
+GET /api/3.0/events/?since=cc537e54-e59c-11e3-a593-3c970e806452 HTTP/1.1
 ```
 
 Response:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-
-[
-    {
-        "event": "2a6d6432-e59d-11e3-9a52-3c970e806452",
-        "order": {
-            "path": "/api/3.0/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
-            "accessId": "STTA0001",
-            "service": "BB-100-10",
-            "operation": "DEACTIVATE",
-            "state": "DONE_SUCCESS",
-            "message": ""
-        }
-    },
-    {
-        "event": "251825a8-e59d-11e3-bf71-3c970e806452",
-        "order": {
-            "path": "/api/3.0/orders/3393123a-e59f-11e3-9371-3c970e806452",
-            "accessId": "STTA0002",
-            "service": "BB-100-10",
-            "operation": "ACTIVATE",
-            "state": "DONE_FAILED",
-            "message": "Port is too busy for you. You can't handle the truth!"
-        }
-    }
- ]
+{
+    "event": "2a6d6432-e59d-11e3-9a52-3c970e806452",
+    "access": "STTA0001"
+},
+{
+    "event": "251825a8-e59d-11e3-bf71-3c970e806452",
+    "access": "STTA0001"
+}
 ```
 
 Anropet skall returnera samtliga events som skett sedan Eventet `since`.
@@ -58,7 +37,7 @@ Det måste inte vara ett UUID, utan KO kan bestämma innehållet så länge det 
 
 Listan över events skall vara stigande i kronologisk ordning (senaste eventet sist). Tjänsteleverantören skall att använda det sista lästa eventet som `since`-parameter i nästföljande anrop.
 
-Enbart order-event av typen order.event `DONE_SUCCESS` eller `DONE_FAILED` får förekomma.
+Svaret skickas som Concatenated JSON. "Concatenated JSON" omfattar "Line delimited JSON".
 
 ## Exempel: Hämtning av alla events
 
@@ -71,21 +50,11 @@ Response:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-
-[
-    {
-        "event": "251825a8-e59d-11e3-bf71-3c970e806452",
-        "order": {
-            "path": "/api/3.0/orders/3393123a-e59f-11e3-9371-3c970e806452",
-            "accessId": "STTA0002",
-            "service": "BB-100-10",
-            "operation": "ACTIVATE",
-            "state": "DONE_FAILED",
-            "message": "Port is too busy for you. You can't handle the truth!"
-        }
-    },
-    ...
-]
+{
+    "event": "251825a8-e59d-11e3-bf71-3c970e806452",
+    "access": "STTA0001"
+}
+...
 ```
 
 Om ingen _since_ parameter skickas med i anropet skall _samtliga_ events returneras.

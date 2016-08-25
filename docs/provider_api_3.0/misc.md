@@ -2,9 +2,9 @@
 
 ## Endpoints
 
-_En_ URL pekar ut adressen till roten API:et, ex. `http://host/api/2.2/`.
+_En_ URL pekar ut adressen till roten API:et, ex. `http://host/api/3.0/`.
 
-Under URL:en förväntas tjänsterna finnas: `orders/` (`http://host/api/2.1/orders/`),  `accesses/` (`http://host/api/2.1/accesses/`) etc.
+Under URL:en förväntas tjänsterna finnas: `orders/` (`http://host/api/3.0/orders/`),  `accesses/` (`http://host/api/2.1/accesses/`) etc.
 
 ## Autentisering
 

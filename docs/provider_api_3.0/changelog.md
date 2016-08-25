@@ -1,14 +1,20 @@
-Feasibility:
-Concatenated Json
-Tagit bort CountryCode
-Metertalsadress anges helt och hållet i streetNumber, streetLittera likaså.
-Lagt till fastighetsbeteckning.
-
-Att göra:
-Urkoppling
-
-
 # Ändringar mot tidigare versioner
+
+## Nytt i API 3.0
+
+* Format för Feasibility är ändrat till Concatenated JSON.
+* Nya fält:
+    * Fastighetsbeteckning
+    * Urkoppling
+    * Media
+* Borttagna fält:
+    * Feasibility & Availability: PremisesType
+    * Feasibility & Availability: CountryCode
+* Feasibility & Availability: Hopslagning av streetNumber och streetLittera till streetNumber.
+  På så vis används streetNumber för gatunummer och gatubokstav "10A" likaväl som vid metertalsadresser: "100-30".
+* "Service Activation API" är utbytt till ett State-baserat API. "Access & Activation API".
+* "Availability API", "Service Activation API" och "Option82 Lookup API" är hopslaget med "Access & Activation API".
+* Stöd för Suspend av slutkunds tjänster.
 
 ## Nytt i API 2.2.3
 

@@ -16,10 +16,11 @@ Innehåller operationer med följande syften:
 2. [Feasibility API](feasibility.md)
 3. [Access & Activation API](access.md)
 4. [Access Events API](access_events.md)
-5. [FM Link Status API](fm_linkstatus.md)
-6. [Option82](option82.md)
-7. [Trouble Tickets](tt.md)
-8. [Övergripande](misc.md)
+5. [Code Activation API](code_activation.md)
+6. [FM Link Status API](fm_linkstatus.md)
+7. [Option82](option82.md)
+8. [Trouble Tickets](tt.md)
+9. [Övergripande](misc.md)
 
 ## Definitioner
 

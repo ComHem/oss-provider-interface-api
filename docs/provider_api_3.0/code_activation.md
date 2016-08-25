@@ -1,8 +1,8 @@
 # Code Activation API
 
-Syftet med "Code Activation API" är att erbjuda Tjänsteleverantörer att automatiskt identifiera kunder genom att slutkund anger en kod i ett gränssnitt som tillhör TL.
+Syftet med "Code Activation API" är att erbjuda Tjänsteleverantörer att automatiskt identifiera kunder genom att slutkund anger en kod i ett gränssnitt som tillhandahållet av TL.
 
-KO erbjuder kund möjlighet att navigera till TLs kodaktiveringsportal och skickar med en token som TL kan använda för att hämta (för aktiveringen) nödvändig information.
+KO erbjuder kund möjlighet att navigera till TLs kodaktiveringsportal tillsammans med (för kundaktivering) nödvändig information.
 
 ## Flöde:
 

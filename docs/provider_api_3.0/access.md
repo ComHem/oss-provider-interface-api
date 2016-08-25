@@ -157,15 +157,24 @@ Content-Type: application/json
                 <code>realisedState, requestedState / customer</code>
             </td>
             <td>
-                
+                `customer` anger kontaktinformation till TLs kund.<br>
+                JSON-strukturen är obligatorisk och kommer alltid skickas med, men samtliga attribut kan vara tomma.<br>
+                <em>obligatorisk</em><br>
+                <br>
+                Format:<br>
+                socialSecurityNumber: yyyymmddnnnn<br>
+                phone: (exempel: +4631650000)<br>
+                mobilePhone: (exempel: +4631650000)
             </td>
         </tr>
         <tr>
             <td>
-                <code>realisedState, requestedState / deliveryAddress</code>
+                <code>deliveryAddress</code>
             </td>
             <td>
-                
+                `deliveryAddress` anger tjänstens leveransadress.<br>
+                JSON-strukturen är obligatorisk och kommer alltid skickas med, men samtliga attribut kan vara tomma.<br>
+                <em>obligatorisk</em>
             </td>
         </tr>
         <tr>
@@ -173,7 +182,7 @@ Content-Type: application/json
                 <code>mismatchCauses</code>
             </td>
             <td>
-            
+                När `realisedState` och `requestedState` skiljer sig skall det finnas minst ett element i mismatchCauses som anger orsak. När `mismatchCauses` är tom anses accessen vara exakt i det state som TL beställt av KO.
             </td>
         </tr>
         <tr>
@@ -181,7 +190,9 @@ Content-Type: application/json
                 <code>mismatchCauses / type</code>
             </td>
             <td>
-            
+                Ett av: "IN_PROGRESS" och "OTHER".<br>
+                En vanlig orsak till att `realisedState` och `requestedState` skiljer sig är att de beställda ändringarna håller på att realiseras. Det är inte fel, per se, varför detta kan indikeras genom `type` "IN_PROGRESS".<br>
+                <em>obligatorisk</em>
             </td>
         </tr>
         <tr>
@@ -189,7 +200,7 @@ Content-Type: application/json
                 <code>mismatchCauses / cause</code>
             </td>
             <td>
-            
+                Fritext som beskriver felet. Skall vara lämpligt att visa för kund eller TL 1st-line support.
             </td>
         </tr>
     </tbody>

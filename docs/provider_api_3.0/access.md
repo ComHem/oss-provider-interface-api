@@ -57,9 +57,10 @@ Content-Type: application/json
         "coCpeSwitch": "",
         "coCpeRouter": "NETGEAR WNDR4000"
     },
-    "expectedState": [
+    "realisedState": [
         { 
-            "service": "BB-1000-100",
+            "service": "BB-100-100",
+            "suspended": "NOT_SUSPENDED",
             "customer": {
                 "name": "Kalle Anka",
                 "personnummer": "",
@@ -76,9 +77,10 @@ Content-Type: application/json
             }
         }
     ],
-    "actualState": [
+    "requestedState": [
         { 
-            "service": "BB-100-100",
+            "service": "BB-1000-100",
+            "suspended": "NOT_SUSPENDED",
             "customer": {
                 "name": "Kalle Anka",
                 "personnummer": "",
@@ -104,8 +106,6 @@ Content-Type: application/json
 
 ## Fältbeskrivningar
 
-Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibility.md">Feasibility</a>.
-
 * `null` är inte ett giltigt värde för något fält.
 * Fält markerade med _obligatoriskt_ får inte vara tomma stängen (`""`)
 
@@ -117,12 +117,10 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
         </tr>
         <tr>
             <td>
-                <code>services</code>
+                <code>feasibility / *</code>
             </td>
             <td>
-                Anger accessens tjänster och feasibility per tjänst. Se fält per tjänst nedan. <br/>
-                Oavsett vilken Service Provider som hämtar feasibility-data skall services innehålla samma information.<br/>
-                <em>obligatorisk</em>
+                För alla `feasibility`-fält, se <a href="feasibility.md">Feasibility</a>.
             </td>
         </tr>
         <tr>

@@ -208,14 +208,16 @@ Content-Type: application/json
 
 ### Exempel, uppdatering av requestedState
 
+#### RequestedState på AccessID
 
+Tjänsteleverantör uppdaterar `requestedState` till BB 100/100, TV och Telefoni.
 
 Request:
 ```http
 POST /api/3.0/access/STTA0001 HTTP/1.1
 Content-Type: application/json
 [
-    { 
+   { 
         "service": "BB-100-100",
         "suspended": "NOT_SUSPENDED",
         "customer": {
@@ -232,16 +234,25 @@ Content-Type: application/json
             "postalCode": "10000",
             "city": "Ankeborg"
         }
-    }
-]
-```
-
-eller
-
-```http
-POST /api/3.0/port/5216010765746820302F31020B31302E31302E31302E3130 HTTP/1.1
-Content-Type: application/json
-[
+    },
+    { 
+        "service": "TELE",
+        "suspended": "NOT_SUSPENDED",
+        "customer": {
+            "name": "Kalle Anka",
+            "personnummer": "",
+            "email": "karl@ankeborg.se",
+            "phone": "",
+            "mobilePhone": ""
+        },
+        "deliveryAddress": {
+            "smsNotificationPhone": "",
+            "streetName": "Testvägen",
+            "streetNumber": "100A",
+            "postalCode": "10000",
+            "city": "Ankeborg"
+        }
+    },
     { 
         "service": "TV",
         "suspended": "NOT_SUSPENDED",
@@ -263,11 +274,26 @@ Content-Type: application/json
 ]
 ```
 
+### RequestedState på Port
+
+Exemplet visar uppdatering av `requestedState` till inga beställda tjänster. Exemplet sker genom nyckeln port.
+
+```http
+POST /api/3.0/port/5216010765746820302F31020B31302E31302E31302E3130 HTTP/1.1
+Content-Type: application/json
+[
+]
+```
+
+### Exempel på svar på uppdatering
+
+Uppdateringar som är välformade skall besvaras med payload som vid motsvarande GET på resursen.
+`requestedState` skall vara det som beställdes. `realisedState` skall fortsättningsvis vara faktiskt realiserat state. `mismatchCauses` skall beskriva varför de skiljer sig, om de skiljer sig.
+
 Response:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-
 {
     "accessId": "STTA0001",
     "accessPort": "5216010765746820302F31020B31302E31302E31302E3130",

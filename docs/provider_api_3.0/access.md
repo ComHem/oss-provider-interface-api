@@ -7,7 +7,7 @@ Access & Activation API erbjuder möjligheten att i realtid hämta följande inf
 * Förklaring till varför det är skillnader mellan Önskat och Faktiskt Access-State.
 * Uppslag mellan Port-representationerna (AccessID och SwitchPort/O82).
 
-### Exempel
+### Exempel, hämtning av access-state
 
 Request:
 ```http
@@ -205,3 +205,146 @@ Content-Type: application/json
         </tr>
     </tbody>
 </table>
+
+### Exempel, uppdatering av requestedState
+
+
+
+Request:
+```http
+POST /api/3.0/access/STTA0001 HTTP/1.1
+Content-Type: application/json
+[
+    { 
+        "service": "BB-100-100",
+        "suspended": "NOT_SUSPENDED",
+        "customer": {
+            "name": "Kalle Anka",
+            "personnummer": "",
+            "email": "karl@ankeborg.se",
+            "phone": "",
+            "mobilePhone": ""
+        },
+        "deliveryAddress": {
+            "smsNotificationPhone": "",
+            "streetName": "Testvägen",
+            "streetNumber": "100A",
+            "postalCode": "10000",
+            "city": "Ankeborg"
+        }
+    }
+]
+```
+
+eller
+
+```http
+POST /api/3.0/port/5216010765746820302F31020B31302E31302E31302E3130 HTTP/1.1
+Content-Type: application/json
+[
+    { 
+        "service": "TV",
+        "suspended": "NOT_SUSPENDED",
+        "customer": {
+            "name": "Kalle Anka",
+            "personnummer": "",
+            "email": "karl@ankeborg.se",
+            "phone": "",
+            "mobilePhone": ""
+        },
+        "deliveryAddress": {
+            "smsNotificationPhone": "",
+            "streetName": "Testvägen",
+            "streetNumber": "100A",
+            "postalCode": "10000",
+            "city": "Ankeborg"
+        }
+    }
+]
+```
+
+Response:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "accessId": "STTA0001",
+    "accessPort": "5216010765746820302F31020B31302E31302E31302E3130",
+    "feasibility": {
+        "streetName": "Testvägen",
+        "streetNumber": "100A",
+        "postalCode": "10000",
+        "city": "Ankeborg",
+        "mduApartmentNumber": "1001",
+        "mduDistinguisher": "12121212",
+        "outlet": "A-11-14",
+        "population": "Hemsöhem",
+        "services": [
+            {
+                "service": "BB-100-100",
+                "connection": "2014-03-01"
+            }, {
+                "service": "BB-100-10",
+                "connection": "2013-10-12"
+            }, {
+                "service": "BB-10-10",
+                "connection": "2013-10-12"
+            }, {
+                "service": "IPTV",
+                "connection": "2013-10-12"
+            }, {
+                "service": "VOIP",
+                "connection": "2013-08-13"
+            }
+        ],
+        "coFiberConverter": "LASER_3001X_MK2",
+        "coCpeSwitch": "",
+        "coCpeRouter": "NETGEAR WNDR4000"
+    },
+    "realisedState": [
+        { 
+            "service": "BB-100-100",
+            "suspended": "NOT_SUSPENDED",
+            "customer": {
+                "name": "Kalle Anka",
+                "personnummer": "",
+                "email": "karl@ankeborg.se",
+                "phone": "",
+                "mobilePhone": ""
+            },
+            "deliveryAddress": {
+                "smsNotificationPhone": "",
+                "streetName": "Testvägen",
+                "streetNumber": "100A",
+                "postalCode": "10000",
+                "city": "Ankeborg"
+            }
+        }
+    ],
+    "requestedState": [
+        { 
+            "service": "BB-1000-100",
+            "suspended": "NOT_SUSPENDED",
+            "customer": {
+                "name": "Kalle Anka",
+                "personnummer": "",
+                "email": "karl@ankeborg.se",
+                "phone": "",
+                "mobilePhone": ""
+            },
+            "deliveryAddress": {
+                "smsNotificationPhone": "",
+                "streetName": "Testvägen",
+                "streetNumber": "100A",
+                "postalCode": "10000",
+                "city": "Ankeborg"
+            }
+        }
+    ],
+    "mismatchCauses": [
+        { "type": "IN_PROGRESS", "cause": "" },
+        { "type": "OTHER", "cause": "Ny mediaomvandlare är beställd. Tills dess har kunden 100/100." }
+    ]
+}
+``` 

@@ -259,7 +259,7 @@ Svaret skickas som [Concatenated JSON][wikipedia-concatenated-json]. "Concatenat
        </tbody>
 </table>
 
-1. När flera avlämningspunkter finns på samma adress (streetName, streetNumber, postnummer) behöver de kunna särskiljas med hjälp av mduApartmentNumber eller mduApartmentNumber.
+1. När flera avlämningspunkter finns på samma adress (streetName, streetNumber, postnummer) behöver de kunna särskiljas med hjälp av mduApartmentNumber eller mduDistinguisher.
 
 ## Begränsningsmekanism
 

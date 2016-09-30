@@ -16,6 +16,7 @@
 * "Availability API", "Service Activation API" och "Option82 Lookup API" är hopslaget med "Access & Activation API".
 * "Order Events API" är utbytt till "Access Event API" och är en grundläggande del i nya "Access & Activation API".
 * Stöd för Suspend av slutkunds tjänster.
+* Stöd för information som mellanlagras hos KO å TLs vägnar, för att TL skall kunna korrelera. ("spReference")
 
 ## Nytt i API 2.2.3
 

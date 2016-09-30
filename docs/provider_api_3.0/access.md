@@ -6,6 +6,7 @@ Access & Activation API erbjuder möjligheten att i realtid hämta följande inf
 * Vilka tekniska tjänster som för närvarande är aktiva på accessen (faktiskt Access-State).
 * Förklaring till varför det är skillnader mellan Önskat och Faktiskt Access-State.
 * Uppslag mellan Port-representationerna (AccessID och SwitchPort/O82).
+* Stöd för TL nycklar.
 
 ### Exempel, hämtning av access-state
 
@@ -94,6 +95,10 @@ Content-Type: application/json
                 "streetNumber": "100A",
                 "postalCode": "10000",
                 "city": "Ankeborg"
+            },
+            "spReferences": {
+                "key": "value",
+                "key2": "value"
             }
         }
     ],
@@ -166,6 +171,17 @@ Content-Type: application/json
                 phone: (exempel: +4631650000)<br>
                 mobilePhone: (exempel: +4631650000)
             </td>
+        </tr>
+        <tr>
+            <td>
+                <code>requestedState / spReferences</code>
+            </td>
+            <td>
+                `spReferences` är ett frivilligt fält, som, om det finns, måste vara ett objekt med en nivå av key/value.
+                Alla values skall vara strängar.<br>
+                Syftet med `spReferences` är att erbjuda en mekanism till Tjänsteleverantörer att kunna ange data vid en aktivering, som TL senare själv kan utläsa. Inga andra garantier eller funktioner än lagring av `spReferences` garanteras.<br>
+                TL bestämmer själv nycklar och värden inuti spReferences-objektet och en KO som implementera API skall spara och återge `spReferences` som skickats vid aktivering.<br>
+                Nycklar och värden måste vara strängar, aldrig null, endast i en nivå (se exempel) och har maximal innehållslängd på 255 tecken.<br>
         </tr>
         <tr>
             <td>
@@ -269,6 +285,9 @@ Content-Type: application/json
             "streetNumber": "100A",
             "postalCode": "10000",
             "city": "Ankeborg"
+        },
+        "spReferences": {
+            "ourRef": "makes-sense-to-service-provider"
         }
     }
 ]

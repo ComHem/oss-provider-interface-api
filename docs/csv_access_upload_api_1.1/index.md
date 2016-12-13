@@ -1,4 +1,4 @@
-# CSV Access Upload API V1
+# CSV Access Upload API V1.1
 
 ** Notera: Detta API är under utveckling och inte 100% stabiliserat. **
 

@@ -8,6 +8,10 @@ Med "access" menas en unik avlämningspunkt, alltså en port på en access-switc
 
 Eftersom det är fördelaktigt att kunna hålla Tjänsteleverantörs system uppdaterat och "i synk" med kommunikationsoperatören om det aktuella beståndet bör nya uppdaterade CSV-filer laddas upp frekvent.
 
+## Ändringar mot V1.0
+
+Fälten portSpeed, iptv och rfof har tillkommit. Dessa medger att man via CSV kan läsa in accesser ur ett heterogent bestånd. Dvs ett bestånd där man per access anger portens maxhastighet, och om iptv och/eller analog TV går att leverera.
+
 ## Exempel
 
 <pre style="overflow: auto">

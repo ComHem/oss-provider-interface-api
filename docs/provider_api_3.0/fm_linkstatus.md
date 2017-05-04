@@ -89,7 +89,6 @@ Content-Type: application/json
 		Enheten är mbps, giltiga värden är: 10, 100, 1000.
             </td>
         </tr>
-
 	<tr>
             <td>
                 <code>up / clients</code>

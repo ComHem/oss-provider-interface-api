@@ -10,7 +10,7 @@ KO erbjuder kund möjlighet att navigera till TLs kodaktiveringsportal tillsamma
 2. Kund försöker surfa och kommer till KOs portal (eftersom kund inte har någon bredbandstjänst).
 3. KO erbjuder kunden möjlighet att köpa tjänster, eller att aktivera redan köpta tjänster hos Tjänsteleverantörer.
 4. Kunden väljer att aktivera en redan köpt tjänst (kund har varit i kontakt med KO tidigare).
-5. KO redirectar kunden till `https://kodaktivering.exempel-tl.se/ko=ko&accessid=STTA0001&tid=2016-08-25T13%3A41%3A39Z&hash=lNjQgc3RyaW5nLiA%3D`<br>
+5. KO redirectar kunden till `https://kodaktivering.exempel-tl.se/?ko=ko&accessid=STTA0001&tid=2016-08-25T13%3A41%3A39Z&hash=lNjQgc3RyaW5nLiA%3D`<br>
 6. I exemplet ovan är det uppenbart vad ko, accessid innebär. `tid` och `hash` behöver däremot förklaring:
 7.    Ur URL kan vi utläsa:<br>
   * `tid` (2016-08-25T13:41:39Z) är tiden när redirect-länken genererades i ISO8601 date/time. Den används för att motverka sk. 'replay'-attacker.

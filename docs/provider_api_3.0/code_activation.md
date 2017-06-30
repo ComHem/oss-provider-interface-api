@@ -17,7 +17,7 @@ KO erbjuder kund möjlighet att navigera till TLs kodaktiveringsportal tillsamma
   * `hash` används för att validera att informationen (ko, accessid, tid) kom från KO och att den inte manipulerats på vägen.<br> Funktionen för detta beskrivs nedan under [MAC-algoritm](#mac-algoritm).
 7. När kund har lyckats att aktivera sig i TLs kodaktiveringsportal kommer TL att beställa rätt tjänster hos KO, och kunden kommer igång med sitt bredband.
 
-## MAC Algoritm<a name="mac-algoritm"></a>
+## MAC-Algoritm<a name="mac-algoritm"></a>
 
 `hash` beräknas genom att konkatenera ko, accessid, tid till en sträng. Efter det används X med en gemensamt delad (mellan KO och TL) nyckel.
 

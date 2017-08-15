@@ -10,9 +10,7 @@ Detta API specificerar inte i vilket skede en KO gör överlämningen till tjän
 
 En web portal URL skall ha följande format:
 
-	https://sp.example.com/some-path?ko=example_net&accessId=ABCD1234&mac=01:23:45:67:89:AB&tid=2017-08-14T13:33:06.842Z&hash=9288792ebb273748b20a075887c41850f78d3471c04ce2c7ecdb94c6dde6aa79
-
-TODO: Generera korrekt hash för exemplet...
+	https://sp.example.com/some-path?ko=example_net&accessId=ABCD1234&mac=01:23:45:67:89:AB&tid=2017-08-15T06:58:26.628Z&hash=16eec7df7085f2de0a8d351ac4c75a0c02fb775c5eb823f96e6fb19bedaf65ed
 
 `sp.example.com` är en server som driftas av TL. Hostnamn, och path bestäms gemensamt av KO och TL och specificeras inte av detta API.
 

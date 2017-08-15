@@ -65,7 +65,7 @@ En web portal URL skall ha följande format:
 
 För att förhindra att spoofing-attacker där en attackerare anger ett annat access-id eller MAC än det hen faktiskt sitter på så behöver datat signeras. Detta görs med fördel med en standardiserad algoritm som HMAC-SHA256.
 
-KO och TL kommer behöva komma överrens om algoritm och en (gemensam) hemlig nyckel som skall användas vid signeringen.
+KO och TL kommer behöva komma överens om algoritm och en (gemensam) hemlig nyckel som skall användas vid signeringen.
 
 Hashen skapas genom att initiera algoritmen med det hemliga lösenordet och sedan i tur och ordning skriva värdet av `ko`, `accessId`, `mac`, `tid` encodade i UTF-8.
 

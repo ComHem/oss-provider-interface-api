@@ -6,7 +6,7 @@ Detta API specificerar inte vad tjänsteleverantörens portalsida skall använda
 
 Detta API specificerar inte i vilket skede en KO gör överlämningen till tjänstelevarntörens portal. Man kan tänka sig scenarion där KO gör en automatisk HTTP redirect till TL baserad på t.ex. vendor-id (option 60) i DHCP eller att kunden måste klicka på en länk i KO:s portal.
 
-# URL-format
+## URL-format
 
 En web portal URL skall ha följande format:
 
@@ -63,7 +63,7 @@ TODO: Generera korrekt hash för exemplet...
 	</tr>
 </table>
 
-# Kryptografisk hash (Message Authentication Code)
+## Kryptografisk hash (Message Authentication Code)
 
 För att förhindra att spoofing-attacker där en attackerare anger ett annat access-id eller MAC än det hen faktiskt sitter på så behöver datat signeras. Detta görs med fördel med en standardiserad algoritm som HMAC-SHA256.
 

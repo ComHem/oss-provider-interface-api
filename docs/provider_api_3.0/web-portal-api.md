@@ -17,10 +17,10 @@ TODO: Generera korrekt hash för exemplet...
 `sp.example.com` är en server som driftas av TL. Hostnamn, och path bestäms gemensamt av KO och TL och specificeras inte av detta API.
 
 <table>
-	<td>
-		<th>Query paramter</th>
+	<tr>
+		<th>Query parameter</th>
 		<th>Beskrivning</th>
-	</td>
+	</tr>
 	<tr>
 		<td>
 			<code>ko</code>

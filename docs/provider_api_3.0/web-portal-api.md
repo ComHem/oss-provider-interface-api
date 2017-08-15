@@ -8,7 +8,7 @@ Detta API specificerar inte i vilket skede en KO gör överlämningen till tjän
 
 # URL-format
 
-En portal API URL ser ut som följande:
+En web portal URL skall ha följande format:
 
 	https://sp.example.com/some-path?ko=example_net&accessId=ABCD1234&mac=01:23:45:67:89:AB&tid=2017-08-14T13:33:06.842Z&hash=9288792ebb273748b20a075887c41850f78d3471c04ce2c7ecdb94c6dde6aa79
 
@@ -58,7 +58,7 @@ TODO: Generera korrekt hash för exemplet...
 			<code>hash</code>
 		</td>
 		<td>
-			Kryptografisk hash (Message Authentication Code) av övriga query parametrar (se nedan) i hex-format.			
+			Kryptografisk hash (Message Authentication Code) av övriga query parametrar (se nedan) i hex-format.
 		</td>
 	</tr>
 </table>
@@ -67,11 +67,11 @@ TODO: Generera korrekt hash för exemplet...
 
 För att förhindra att spoofing-attacker där en attackerare anger ett annat access-id eller MAC än det hen faktiskt sitter på så behöver datat signeras. Detta görs med fördel med en standardiserad algoritm som HMAC-SHA256.
 
-KO och TL kommer behöva komma överrens om algoritm och en hemlig nyckel som skall användas vid signeringen.
+KO och TL kommer behöva komma överrens om algoritm och en (gemensam) hemlig nyckel som skall användas vid signeringen.
 
 Hashen skapas genom att initiera algoritmen med det hemliga lösenordet och sedan i tur och ordning skriva värdet av `ko`, `accessId`, `mac`, `tid` encodade i UTF-8.
 
-Exempel-implementation i Java:
+Exempelimplementation i Java:
 ```java
 	public static byte[] authenticationHash(String ko, String accessId, String mac, String tid) throws NoSuchAlgorithmException, InvalidKeyException  {
 		Mac macAlgo = Mac.getInstance("HmacSHA256");

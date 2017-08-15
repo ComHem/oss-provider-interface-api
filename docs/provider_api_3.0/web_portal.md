@@ -4,7 +4,7 @@ Syftet med Web Portal API är att på ett säkert sätt kunna göra en överläm
 
 Detta API specificerar inte vad tjänsteleverantörens portalsida skall användas till. Tänkbara användingsområden är aktivering, kontroll, eller köp av tjänster.
 
-Detta API specificerar inte i vilket skede en KO gör överlämningen till tjänstelevarntörens portal. Man kan tänka sig scenarion där KO gör en automatisk HTTP redirect till TL baserad på t.ex. vendor-id (option 60) i DHCP eller att kunden måste klicka på en länk i KO:s portal.
+Detta API specificerar inte i vilket skede en KO gör överlämningen till tjänsteleverantörens portal. Man kan tänka sig scenarion där KO gör en automatisk HTTP redirect till TL baserad på t.ex. vendor-id (option 60) i DHCP eller att kunden måste klicka på en länk i KO:s portal.
 
 ## URL-format
 

@@ -16,7 +16,7 @@ Innehåller operationer med följande syften:
 2. [Feasibility API](feasibility.md)
 3. [Access & Activation API](access.md)
 4. [Access Events API](access_events.md)
-5. [Code Activation API](code_activation.md)
+5. [Web Portal API](web_portal.md)
 6. [FM Link Status API](fm_linkstatus.md)
 7. [Option82](option82.md)
 8. [Trouble Tickets](tt.md)

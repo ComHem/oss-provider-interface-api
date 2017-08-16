@@ -40,8 +40,8 @@ En web portal URL skall ha följande format:
 			<code>mac</code>
 		</td>
 		<td>
-			MAC-adress för kundens utrustning. Detta kan vara användbart för TL för felsökning och aktivering av tjänster (t.ex. ATA-box i hemma-router levererad av TL).
-			MAC-adressen är alltid exakt 17 tecken lång.
+			MAC-adress för kundens utrustning. Detta kan vara användbart för TL för felsökning och aktivering av tjänster (t.ex. ATA-box i hemma-router levererad av TL).<br>
+			MAC-adressen är alltid exakt 17 tecken lång.<br>
 			Exempel: "01:23:45:67:89:AB".
 		</td>
 	</tr>
@@ -50,7 +50,8 @@ En web portal URL skall ha följande format:
 			<code>tid</code>
 		</td>
 		<td>
-			Tidsstämpel då URL:en skapades. TL kan avgöra hur länge en URL skall vara godkänd att användas beroende på hur känslig data som exponeras av portalen. Detta för att förhindra replay-attacker. Skall vara formaterad enligt ISO-8601 i tidszon Z (UTC).
+			Tidsstämpel då URL:en skapades. TL kan avgöra hur länge en URL skall vara godkänd att användas beroende på hur känslig data som exponeras av portalen. Detta för att förhindra replay-attacker.<br>
+			Skall vara formaterad enligt ISO-8601 i tidszon Z (UTC).
 		</td>
 	</tr>
 	<tr>

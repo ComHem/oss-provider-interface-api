@@ -41,6 +41,8 @@ En web portal URL skall ha följande format:
 		</td>
 		<td>
 			MAC-adress för kundens utrustning. Detta kan vara användbart för TL för felsökning och aktivering av tjänster (t.ex. ATA-box i hemma-router levererad av TL).
+			MAC-adressen är alltid exakt 17 tecken lång.
+			Exempel: "01:23:45:67:89:AB".
 		</td>
 	</tr>
 	<tr>

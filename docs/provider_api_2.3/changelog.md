@@ -7,21 +7,13 @@ API 2.3 innehåller ändringar motiverade av [GDPR][wikipedia-gdpr].
 ## Ändringar som bryter API
 
 * Borttagning av reglerad kundinformation i Service Activation API.
-
-Påverkar Service Activation API där fälten fälten `customer` och `deliveryAddress` är borttagna.
-
+** Fälten `customer` och `deliveryAddress` är borttagna.  
 * Trouble-Ticket API är borttaget.
 
 ## Nytt i API 2.3
 
-### Service Activation API
+* SP-referenser i Service Activation API & Availability API.
+* Nytt API för låta KO hämta kundinformation associerad med en access från TL.
+* Backport av Web Portal API från API 3.0 
 
-* TL-specifika referenser i Service Activation erbjuder TL att extra information till KO.
-* TL-specifika referenser går att utläsa i Availability API.
-
-### Separat API för kundinformation
-
-Ger KO möjlighet att, för en access, i realtid fråga TL om kundinformation.
-Sådan access loggas, och regleras i enlighet med GDPR.
-
-[wikipedia-gdpr]: https://sv.wikipedia.org/wiki/Allm%C3%A4nna_dataskyddsf%C3%B6rordningen "Allmänna_dataskyddsförordningen" 
+[wikipedia-gdpr]: https://sv.wikipedia.org/wiki/Allm%C3%A4nna_dataskyddsf%C3%B6rordningen "Allmänna_dataskyddsförordningen"

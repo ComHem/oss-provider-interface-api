@@ -63,7 +63,11 @@ Content-Type: application/json
             "option82": "5216010765746820302F31020B31302E31302E31302E3130",
             "equipment": [
                 { "vendorId" : "CH_BROADBAND" }
-            ]
+            ],
+            "spReferences": {
+                "key": "value",
+                "key2": "value"
+            }
         }, {
             "service": "IPTV",
             "option82": "5216010765746820302F32020B31302E31302E31302E3130",
@@ -183,6 +187,14 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
             <td>
                 Lista av utrustning som tjänsteleverantör angett för tjänsten.<br>
                 Se <a href="service_activation.md">Service Activation</a> för mer information.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>spReferences</code>
+            </td>
+            <td>
+                Se <a href="service_activation.md">Service Activation</a> för fullständig förklaring och specifikation.
             </td>
         </tr>
     </tbody>

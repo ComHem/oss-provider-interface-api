@@ -150,6 +150,7 @@ Content-Type: application/json
                 TL bestämmer själv nycklar och värden inuti spReferences-objektet och en KO som implementerar API skall spara och återge `spReferences` som skickats vid aktivering.<br>
                 Nycklar och värden måste vara strängar, aldrig null, endast i en nivå (se exempel) och har maximal innehållslängd på 255 tecken.<br>
             </td>
+        </tr>
     </tbody>
 </table>
 

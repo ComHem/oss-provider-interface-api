@@ -1,6 +1,6 @@
 # Order Events API
 
-Vid orderläggning i API 2.1 kan kommunikationsoperatören svara med state `RECEIVED`. Det betyder att tjänsteleverantören skall fråga regelbundet om ordern status.
+Vid orderläggning i API kan kommunikationsoperatören svara med state `RECEIVED`. Det betyder att tjänsteleverantören skall fråga regelbundet om ordern status.
 
 Order Event API erbjuder möjlighet att fråga om alla nya Order Event sedan senaste anrop. Så att Tjänsteleverantören kan ställa en fråga för status på alla utestående ordrar. På det viset kan intervallet mellan statushämtningar minskas och kunden får sina tjänster aktiverade snabbare.
 
@@ -12,7 +12,7 @@ Fälten beskrivs i <a href="service_activation.md">Service Activation API</a>.
 
 Request:
 ```http
-GET /api/2.2/orderevents/?since=cc537e54-e59c-11e3-a593-3c970e806452 HTTP/1.1
+GET /api/2.3/orderevents/?since=cc537e54-e59c-11e3-a593-3c970e806452 HTTP/1.1
 ```
 
 Response:
@@ -24,7 +24,7 @@ Content-Type: application/json
     {
         "event": "2a6d6432-e59d-11e3-9a52-3c970e806452",
         "order": {
-            "path": "/api/2.2/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
+            "path": "/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
             "accessId": "STTA0001",
             "service": "BB-100-10",
             "operation": "DEACTIVATE",
@@ -35,7 +35,7 @@ Content-Type: application/json
     {
         "event": "251825a8-e59d-11e3-bf71-3c970e806452",
         "order": {
-            "path": "/api/2.2/orders/3393123a-e59f-11e3-9371-3c970e806452",
+            "path": "/api/2.3/orders/3393123a-e59f-11e3-9371-3c970e806452",
             "accessId": "STTA0002",
             "service": "BB-100-10",
             "operation": "ACTIVATE",
@@ -64,7 +64,7 @@ Enbart order-event av typen order.event `DONE_SUCCESS` eller `DONE_FAILED` får 
 
 Request:
 ```http
-GET /api/2.2/orderevents/ HTTP/1.1
+GET /api/2.3/orderevents/ HTTP/1.1
 ```
 
 Response:
@@ -76,7 +76,7 @@ Content-Type: application/json
     {
         "event": "251825a8-e59d-11e3-bf71-3c970e806452",
         "order": {
-            "path": "/api/2.2/orders/3393123a-e59f-11e3-9371-3c970e806452",
+            "path": "/api/2.3/orders/3393123a-e59f-11e3-9371-3c970e806452",
             "accessId": "STTA0002",
             "service": "BB-100-10",
             "operation": "ACTIVATE",

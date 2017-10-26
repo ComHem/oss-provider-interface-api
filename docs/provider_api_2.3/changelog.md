@@ -7,8 +7,8 @@ API 2.3 innehåller ändringar motiverade av [GDPR][wikipedia-gdpr].
 ## Ändringar som bryter API
 
 * Borttagning av reglerad kundinformation i Service Activation API.
-** Fälten `customer` och `deliveryAddress` är borttagna.  
-* Trouble-Ticket API är borttaget.
+ * Fälten `customer` och `deliveryAddress` är borttagna.  
+ * Trouble-Ticket API är borttaget.
 
 ## Nytt i API 2.3
 

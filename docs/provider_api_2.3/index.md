@@ -1,4 +1,4 @@
-# Provider Interface API 2.2.3
+# Provider Interface API 2.3
 
 Leverantörsoberoende öppet API för effektivt systemsamarbete mellan tjänsteleverantörer (TL eller SP), öppna nät (ÖN) och kommunikationsoperatörer (KO eller CO).
 
@@ -9,6 +9,7 @@ Innehåller operationer med följande syften:
 * Beställa tjänster hos KO.
 * Hämta tekniska detaljer och status på aktiva tjänster hos KO.
 * Stöd för autoaktivering.
+* Uppfyller GDPR.
 
 ## Innehåll
 

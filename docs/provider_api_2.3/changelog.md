@@ -19,7 +19,7 @@ Påverkar Service Activation API där fälten fälten `customer` och `deliveryAd
 * TL-specifika referenser i Service Activation erbjuder TL att extra information till KO.
 * TL-specifika referenser går att utläsa i Availability API.
 
-### Backport av API för kundinformation från API 3.0
+### Separat API för kundinformation
 
 Ger KO möjlighet att, för en access, i realtid fråga TL om kundinformation.
 Sådan access loggas, och regleras i enlighet med GDPR.

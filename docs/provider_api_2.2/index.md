@@ -20,7 +20,7 @@ Innehåller operationer med följande syften:
 6. [Option82 Lookup API](option82_lookup.md)
 7. [FM Link Status API](fm_linkstatus.md)
 8. [Option82](option82.md)
-9. [Trouble Tickets](tt.md)
+9. [Trouble Tickets (Deprecated)](tt.md)
 10. [Övergripande](misc.md)
 
 ## Terminologi

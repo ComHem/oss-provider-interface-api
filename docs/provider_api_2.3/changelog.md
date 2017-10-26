@@ -10,6 +10,8 @@ API 2.3 innehåller ändringar motiverade av [GDPR][wikipedia-gdpr].
 
 Påverkar Service Activation API där fälten fälten `customer` och `deliveryAddress` är borttagna.
 
+* Trouble-Ticket API är borttaget.
+
 ## Nytt i API 2.3
 
 ### Service Activation API

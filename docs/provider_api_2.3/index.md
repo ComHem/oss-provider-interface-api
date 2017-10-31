@@ -21,8 +21,9 @@ Innehåller operationer med följande syften:
 6. [Option82 Lookup API](option82_lookup.md)
 7. [Web Portal API](web_portal.md)
 8. [FM Link Status API](fm_linkstatus.md)
-9. [Option82](option82.md)
-10. [Övergripande](misc.md)
+9. [TL Kundinformations API](access_customer_info.md)
+10. [Option82](option82.md)
+11. [Övergripande](misc.md)
 
 ## Terminologi
 

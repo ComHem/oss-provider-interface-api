@@ -1,90 +1,44 @@
-# Service Activation API
+# TL API: Kundinformation för Access
 
-## Orderläggning, Exempel: Aktivering
+Syftet med API är att låta KO hämta kundinformation om en access från Tjänsteleverantör.
+
+## Exempel
 
 Request:
 ```http
-POST /api/2.3/orders/ HTTP/1.1
+GET /api/2.3/access/STTA0001 HTTP/1.1
+```
+
+Response:
+```http
+HTTP/1.1 200 OK
 Content-Type: application/json
 
-{
-    "accessId": "STTA0001",
-    "service": "BB-100-10",
-    "operation": "ACTIVATE",
-    "forcedTakeover": false,
-    "equipment": [
-        { "vendorId": "CH_BROADBAND" }
-    ],
-    "spReferences": {
-        "key": "value",
-        "key2": "value"
+[
+    {
+        "service": "BB-1000-100",
+        "customer": {
+            "name": "Kalle Anka",
+            "personnummer": "",
+            "email": "karl@ankeborg.se",
+            "phone": "",
+            "mobilePhone": ""
+        },
+        "spReferences": {
+            "key": "value",
+            "key2": "value"
+        }
     }
-}
+]
 ```
 
-Response:
-```http
-HTTP/1.1 201 CREATED
-Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-Location: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
-Content-Type: application/json
-
-{
-    "path": "/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
-    "accessId": "STTA0001",
-    "service": "BB-100-10",
-    "operation": "ACTIVATE",
-    "state": "RECEIVED",
-    "message": ""
-}
-```
-
-## Orderläggning, Exempel: Avaktivering
-
-Request:
-```http
-POST /api/2.3/orders/ HTTP/1.1
-Content-Type: application/json
-
-{
-    "accessId": "STTA0001",
-    "service": "BB-100-10",
-    "operation": "DEACTIVATE"
-}
-```
-
-Response:
-```http
-HTTP/1.1 201 CREATED
-Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-Location: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
-Content-Type: application/json
-
-{
-    "path": "/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
-    "accessId": "STTA0001",
-    "service": "BB-100-10",
-    "operation": "DEACTIVATE",
-    "state": "RECEIVED",
-    "message": ""
-}
-```
-
-## Orderläggning - Fältbeskrivningar
+## Fältbeskrivningar
 
 <table>
     <tbody>
         <tr>
             <td><strong>Fält</strong></td>
             <td><strong>Förklaring</strong></td>
-        </tr>
-        <tr>
-            <td>
-                <code>accessId</code>
-            </td>
-            <td>
-                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
-            </td>
         </tr>
         <tr>
             <td>
@@ -97,46 +51,27 @@ Content-Type: application/json
         </tr>
         <tr>
             <td>
-                <code>operation</code>
+                <code>customer</code>
             </td>
             <td>
-               Anger om tjänsten skall aktiveras eller avaktiveras.<br>
-               Giltiga värden: "ACTIVATE", "DEACTIVATE". <em>text, obligatoriskt</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>forcedTakeover</code>
-            </td>
-            <td>
-                Anger om anropande TLs beställning skall ersätta annan Service Providers aktiva tjänster. Det behöver enbart fungera om Feasibility indikerat att funktionen skall fungera. Det gäller enbart för ACTIVATE-ordrar. Skall inte skickas vid DEACTIVATE. <br>Stöd för forcedTakeover är inte obligatoriskt, men i de fall det inte stöds skall tjänsten ändå kunna ta emot en fullständig beställning med "forcedTakeover: false".
-                <em>boolean (true/false), obligatoriskt för ACTIVATE</em>
+                Syftet med customer är att ge KO information om Tjänsteleverantörens slutkund.<br>
+                JSON-strukturen är obligatorisk och kommer alltid skickas med, men samtliga attribut kan vara tomma.<br>
             </td>
         </tr>
         <tr>
             <td>
-                <code>equipment</code>
+                <code>customer.phone</code>
             </td>
             <td>
-                Equipment innehåller en lista över den utrustning som kan användas för att avgöra vilken tjänst/KO en tjänst tillhör hos kunden.<br>
-                <br>
-                Ett use-case är vid Single-Play-Telefoni, där en TL använder en trådlös router för enbart Telefoni. Då behöver KO kunna avgöra att VendorId CH_BROADBAND skall användas för Telefoni istället för bredband.<br>
-                <br>
-                Listan är per tjänst, och den fullständiga listan skall alltid skickas vid varje aktivering.<br>
-                <br>
-                Vid avaktivering skall listan av equipment rensas.<br>
-                <br>
-                När en order enbart avser ändring av utrustning kan KO välja att starta en order för det, eller svara direkt med att det är utfört.
+                Exempelformat: +4631650000
             </td>
         </tr>
         <tr>
             <td>
-                <code>equipment.vendorId</code>
+                <code>customer.mobilePhone</code>
             </td>
             <td>
-                <em>text, obligatoriskt</em><br>
-                <br>
-                Exempel: "CH_BROADBAND"
+                Exempelformat: +4631650000
             </td>
         </tr>
         <tr>
@@ -149,7 +84,6 @@ Content-Type: application/json
                 Syftet med `spReferences` är att erbjuda en mekanism till Tjänsteleverantörer att kunna ange data vid en aktivering, som TL senare själv kan utläsa. Inga andra garantier eller funktioner än lagring av `spReferences` garanteras.<br>
                 TL bestämmer själv nycklar och värden inuti spReferences-objektet och en KO som implementerar API skall spara och återge `spReferences` som skickats vid aktivering.<br>
                 Nycklar och värden måste vara strängar, aldrig null, endast i en nivå (se exempel) och har maximal innehållslängd på 255 tecken.<br>
-                `SpReferences` sparas per beställd tjänst.<br>
             </td>
         </tr>
     </tbody>

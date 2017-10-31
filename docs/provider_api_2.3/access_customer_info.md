@@ -19,7 +19,6 @@ Content-Type: application/json
         "service": "BB-1000-100",
         "customer": {
             "name": "Kalle Anka",
-            "personnummer": "",
             "email": "karl@ankeborg.se",
             "phone": "",
             "mobilePhone": ""

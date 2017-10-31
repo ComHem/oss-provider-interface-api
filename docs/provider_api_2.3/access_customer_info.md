@@ -2,6 +2,8 @@
 
 Syftet med API är att låta KO hämta kundinformation om en access från Tjänsteleverantör.
 
+*OBS! Till skillnad mot andra APIer är KO klient och TL server i detta API.*
+
 ## Exempel
 
 Request:
@@ -14,9 +16,8 @@ Response:
 HTTP/1.1 200 OK
 Content-Type: application/json
 
-[
-    {
-        "service": "BB-1000-100",
+{
+    "BB-1000-100": {
         "customer": {
             "name": "Kalle Anka",
             "email": "karl@ankeborg.se",
@@ -28,7 +29,7 @@ Content-Type: application/json
             "key2": "value"
         }
     }
-]
+}
 ```
 
 ## Fältbeskrivningar

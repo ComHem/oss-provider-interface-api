@@ -148,6 +148,8 @@ Content-Type: application/json
     </tbody>
 </table>
 
+Gemensamt för alla fält är att de måste finnas i JSON-strukturen och inte vara null.
+
 ## Felhantering och beteende vid orderläggning
 
 Vid order med korrekt format och korrekt innehåll skall svaret se ut på följande sätt:

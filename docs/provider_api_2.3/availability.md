@@ -64,14 +64,12 @@ Content-Type: application/json
             "equipment": [
                 { "vendorId" : "CH_BROADBAND" }
             ],
-            "spReferences": {
-                "key": "value",
-                "key2": "value"
-            }
+            "spReference": ""
         }, {
             "service": "IPTV",
             "option82": "5216010765746820302F32020B31302E31302E31302E3130",
-            "equipment": []
+            "equipment": [],
+            "spReference": ""
         }
     ],
     "coFiberConverter": "LASER_3001X_MK2",
@@ -191,7 +189,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
         </tr>
         <tr>
             <td>
-                <code>spReferences</code>
+                <code>spReference</code>
             </td>
             <td>
                 Se <a href="service_activation.md">Service Activation</a> för fullständig förklaring och specifikation.

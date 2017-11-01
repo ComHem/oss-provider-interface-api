@@ -24,10 +24,7 @@ Content-Type: application/json
             "phone": "",
             "mobilePhone": ""
         },
-        "spReferences": {
-            "key": "value",
-            "key2": "value"
-        }
+        "spReference: ""
     }
 }
 ```
@@ -45,7 +42,8 @@ Content-Type: application/json
                 <code>service</code>
             </td>
             <td>
-                Anger teknisk tjänst som skall aktiveras/avaktiveras på accessen. <br>
+                Service är key i root-objektet.<br>
+                Anger teknisk tjänst som skall vara aktiv på accessen. <br>
                 Värden för tekniska tjänster är KO-specifika och erhålls genom Feasibility-APIt. <em>text, obligatoriskt</em>
             </td>
         </tr>
@@ -76,16 +74,14 @@ Content-Type: application/json
         </tr>
         <tr>
             <td>
-                <code>spReferences</code>
+                <code>spReference</code>
             </td>
             <td>
-                `spReferences` är ett frivilligt fält, som, om det finns, måste vara ett objekt med en nivå av key/value.
-                Alla values skall vara strängar.<br>
-                Syftet med `spReferences` är att erbjuda en mekanism till Tjänsteleverantörer att kunna ange data vid en aktivering, som TL senare själv kan utläsa. Inga andra garantier eller funktioner än lagring av `spReferences` garanteras.<br>
-                TL bestämmer själv nycklar och värden inuti spReferences-objektet och en KO som implementerar API skall spara och återge `spReferences` som skickats vid aktivering.<br>
-                Nycklar och värden måste vara strängar, aldrig null, endast i en nivå (se exempel) och har maximal innehållslängd på 255 tecken.<br>
+                `spReference` anger TLs referens på tjänsten. Används av TL för korrelering.<br>
+                <em>Sträng, max 255 tecken</em>
             </td>
         </tr>
     </tbody>
 </table>
 
+Gemensamt för alla fält är att de måste finnas i JSON-strukturen och inte vara null.

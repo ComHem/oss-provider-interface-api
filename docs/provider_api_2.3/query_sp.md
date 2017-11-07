@@ -16,8 +16,8 @@ Response:
 HTTP/1.1 200 OK
 Content-Type: application/x-ldjson
 
-{ "service": "BB-1000-100", "customer": { "name": "Kalle Anka", "email": "karl@ankeborg.se", "phone": "", "mobilePhone": "" },  ""accessId": "STTA0001", "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" }
-{ "service": "IPTV", "customer": { "name": "Kalle Anka", "email": "karl@ankeborg.se", "phone": "", "mobilePhone": "" },  ""accessId": "STTA0001", "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" }
+{ "service": "BB-1000-100", "customer": { "name": "Kalle Anka", "email": "karl@ankeborg.se", "phone": "", "mobilePhone": "" },  "accessId": "STTA0001", "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" }
+{ "service": "IPTV", "customer": { "name": "Kalle Anka", "email": "karl@ankeborg.se", "phone": "", "mobilePhone": "" },  "accessId": "STTA0001", "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" }
 
 ```
 

@@ -11,7 +11,9 @@ Content-Type: application/json
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "ACTIVATE",
+    "provisioningType": "Start",
     "forcedTakeover": false,
+    "billingId" : "ank22958",
     "customer": {
         "firstName": "Kalle",
         "lastName": "Anka",
@@ -112,8 +114,19 @@ Content-Type: application/json
                 <code>operation</code>
             </td>
             <td>
-               Anger om tjänsten skall aktiveras eller avaktiveras.<br>
-               Giltiga värden: "ACTIVATE", "DEACTIVATE". <em>text, obligatoriskt</em>
+               Anger om tjänsten skall aktiveras, avaktiveras, suspenderas eller avsuspenderas.<br>
+               Giltiga värden: "ACTIVATE", "DEACTIVATE", "SUSPEND", "UNSUSPEND". <em>text, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>provisioningType</code>
+            </td>
+            <td>
+               Anger vilken typ av affärsregler KOs system ska tillämpa (t.ex. för startavgifter).<br>
+               Giltiga värden: "Default", "Upgrade", "Downgrade", "Package", "Test". <br/>
+               Default eller tom sträng är normalfall. Upgrade och downgrade anges om tjänsten ska hanteras som en uppgradering eller nedgradering (KOs system har ansvar att se om detta är tillåtet). "Package" anger att detta ska hanteras som en del av ett paket (KOs system har ansvar att se om detta kan stämma). "Test" används då en ISP vill lägga på en tjänst för att temporärt testa en kunds anslutning och ska normalt inte ha med någon startavgift eller liknande (ansvar för borttagning av temporära tjänster ligger på tjänsteleverantören). 
+               <em>text</em>
             </td>
         </tr>
         <tr>
@@ -123,6 +136,14 @@ Content-Type: application/json
             <td>
                 Anger om anropande TLs beställning skall ersätta annan Service Providers aktiva tjänster. Det behöver enbart fungera om Feasibility indikerat att funktionen skall fungera. Det gäller enbart för ACTIVATE-ordrar. Skall inte skickas vid DEACTIVATE. <br>Stöd för forcedTakeover är inte obligatoriskt, men i de fall det inte stöds skall tjänsten ändå kunna ta emot en fullständig beställning med "forcedTakeover: false".
                 <em>boolean (true/false), obligatoriskt för ACTIVATE</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>billingId</code>
+            </td>
+            <td>
+                Id för tjänsten, för spårbarhet mot kundid/kundnummer i Service Providers system. Får enbart bestå av tecknen a-z, A-Z, 0-9. <em>text, max 32 tecken, [a-zA-Z0-9]+</em>
             </td>
         </tr>
         <tr>
